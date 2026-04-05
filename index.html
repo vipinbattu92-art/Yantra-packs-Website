@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Yantra Packs — Returnable Packaging Pooling</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: { primary:'#1BA9DE', navy:'#0D2B45', eco:'#00C48C', cta:'#FF6B35' },
+      fontFamily: { sans:['Inter','sans-serif'], heading:['Space Grotesk','sans-serif'] }
+    }
+  }
+}
+</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  body { font-family: 'Inter', sans-serif; }
+  h1,h2,h3,h4 { font-family: 'Space Grotesk', sans-serif; }
+  .hero-bg { background: linear-gradient(135deg, #0D2B45 0%, #0f3458 50%, #1a4a6e 100%); }
+  .glow { box-shadow: 0 0 40px rgba(27,169,222,0.15); }
+  .fu { opacity:0; transform:translateY(32px); transition:opacity 0.7s ease, transform 0.7s ease; }
+  .fu.visible { opacity:1; transform:translateY(0); }
+  .fu2 { opacity:0; transform:translateY(32px); transition:opacity 0.7s ease 0.15s, transform 0.7s ease 0.15s; }
+  .fu2.visible { opacity:1; transform:translateY(0); }
+  .fu3 { opacity:0; transform:translateY(32px); transition:opacity 0.7s ease 0.3s, transform 0.7s ease 0.3s; }
+  .fu3.visible { opacity:1; transform:translateY(0); }
+</style>
+</head>
+<body class="bg-white text-gray-800">
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 w-full z-50 bg-white/95 backdrop-blur border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
+    <a href="index.html" class="flex items-center">
+      <span style="background:#1BA9DE;color:#fff;font-weight:800;padding:5px 12px;font-family:Space Grotesk,sans-serif;letter-spacing:1px;font-size:15px;">YANTRA</span><span style="background:#7A7A7A;color:#fff;font-weight:800;padding:5px 12px;font-family:Space Grotesk,sans-serif;letter-spacing:1px;font-size:15px;">PACKS</span>
+    </a>
+    <div class="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600">
+      <a href="solutions.html" class="hover:text-primary transition-colors">Solutions</a>
+      <a href="technology.html" class="hover:text-primary transition-colors">Technology</a>
+      <a href="products.html" class="hover:text-primary transition-colors">Products</a>
+      <a href="industries.html" class="hover:text-primary transition-colors">Industries</a>
+      <a href="sustainability.html" class="hover:text-primary transition-colors">Sustainability</a>
+      <a href="about.html" class="hover:text-primary transition-colors">About</a>
+    </div>
+    <div class="hidden md:flex items-center gap-3">
+      <a href="contact.html" class="bg-cta text-white px-5 py-2 rounded-lg font-semibold text-sm hover:bg-orange-600 transition-colors">Book a Demo</a>
+    </div>
+    <button id="mb" class="md:hidden p-2 text-gray-600">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+  <div id="mm" class="hidden md:hidden bg-white border-t border-gray-100 px-4 py-4 space-y-3">
+    <a href="solutions.html" class="block text-sm font-medium text-gray-700 hover:text-primary">Solutions</a>
+    <a href="technology.html" class="block text-sm font-medium text-gray-700 hover:text-primary">Technology</a>
+    <a href="products.html" class="block text-sm font-medium text-gray-700 hover:text-primary">Products</a>
+    <a href="industries.html" class="block text-sm font-medium text-gray-700 hover:text-primary">Industries</a>
+    <a href="sustainability.html" class="block text-sm font-medium text-gray-700 hover:text-primary">Sustainability</a>
+    <a href="about.html" class="block text-sm font-medium text-gray-700 hover:text-primary">About</a>
+    <a href="contact.html" class="block bg-cta text-white text-center px-4 py-2 rounded-lg font-semibold text-sm">Book a Demo</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero-bg min-h-screen pt-16 flex items-center">
+  <div class="max-w-7xl mx-auto px-4 py-20 grid md:grid-cols-2 gap-12 items-center">
+    <div>
+      <span class="inline-block bg-primary/20 text-primary border border-primary/30 px-4 py-1.5 rounded-full text-sm font-semibold mb-6 fu">India's #1 Returnable Packaging Pooling Company</span>
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-white leading-tight mb-6 fu2">Returnable Packaging.<br><span class="text-primary">Tracked. Pooled.</span><br>Sustainable.</h1>
+      <p class="text-lg text-blue-100 mb-8 leading-relaxed fu3">Cut packaging costs by up to 40%. Achieve 99%+ asset recovery. Meet your ESG goals — all with one partner.</p>
+      <div class="flex flex-wrap gap-4 mb-10 fu3">
+        <a href="contact.html" class="bg-cta text-white px-8 py-3.5 rounded-xl font-bold text-base hover:bg-orange-600 transition-colors shadow-lg">Book a Demo</a>
+        <a href="solutions.html" class="border-2 border-white/40 text-white px-8 py-3.5 rounded-xl font-bold text-base hover:bg-white/10 transition-colors">Explore Solutions →</a>
+      </div>
+      <div class="grid grid-cols-3 gap-4">
+        <div class="bg-white/10 border border-white/20 rounded-xl p-4 text-center glow">
+          <div class="text-2xl font-extrabold text-primary">25M+</div>
+          <div class="text-xs text-blue-200 mt-1">KG CO₂e Prevented</div>
+        </div>
+        <div class="bg-white/10 border border-white/20 rounded-xl p-4 text-center glow">
+          <div class="text-2xl font-extrabold text-primary">99.2%</div>
+          <div class="text-xs text-blue-200 mt-1">Recovery Rate</div>
+        </div>
+        <div class="bg-white/10 border border-white/20 rounded-xl p-4 text-center glow">
+          <div class="text-2xl font-extrabold text-primary">500+</div>
+          <div class="text-xs text-blue-200 mt-1">Enterprise Clients</div>
+        </div>
+      </div>
+    </div>
+    <div class="hidden md:block">
+      <div class="bg-[#060f1a] rounded-2xl p-5 border border-primary/20 shadow-2xl glow">
+        <div class="flex items-center justify-between mb-4">
+          <span style="background:#1BA9DE;color:#fff;font-weight:700;padding:3px 8px;font-size:12px;letter-spacing:1px;">TRAKKIA</span>
+          <span class="flex items-center gap-1.5 text-xs text-green-400 font-medium"><span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>Live</span>
+        </div>
+        <div class="grid grid-cols-3 gap-3 mb-4">
+          <div class="bg-navy/60 rounded-lg p-3 text-center"><div class="text-lg font-bold text-white">12,847</div><div class="text-xs text-gray-400">Active Assets</div></div>
+          <div class="bg-navy/60 rounded-lg p-3 text-center"><div class="text-lg font-bold text-eco">99.2%</div><div class="text-xs text-gray-400">Recovery</div></div>
+          <div class="bg-navy/60 rounded-lg p-3 text-center"><div class="text-lg font-bold text-primary">₹2.3Cr</div><div class="text-xs text-gray-400">Saved</div></div>
+        </div>
+        <div class="mb-4">
+          <div class="flex justify-between text-xs text-gray-400 mb-1"><span>Recovery Rate</span><span class="text-eco">99.2%</span></div>
+          <div class="w-full bg-gray-700 rounded-full h-2"><div class="bg-primary h-2 rounded-full" style="width:99.2%"></div></div>
+        </div>
+        <div class="space-y-2">
+          <div class="flex items-center gap-3 bg-navy/40 rounded-lg p-2.5"><span class="w-2 h-2 bg-eco rounded-full"></span><span class="text-xs text-gray-300 flex-1">Crate #YP-4821 returned — Pune</span><span class="text-xs text-gray-500">2m ago</span></div>
+          <div class="flex items-center gap-3 bg-navy/40 rounded-lg p-2.5"><span class="w-2 h-2 bg-primary rounded-full"></span><span class="text-xs text-gray-300 flex-1">PLS Box batch dispatched — Delhi</span><span class="text-xs text-gray-500">7m ago</span></div>
+          <div class="flex items-center gap-3 bg-navy/40 rounded-lg p-2.5"><span class="w-2 h-2 bg-yellow-400 rounded-full"></span><span class="text-xs text-gray-300 flex-1">Asset overdue alert — Mumbai</span><span class="text-xs text-gray-500">12m ago</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="bg-gray-50 py-20">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-14 fu">
+      <h2 class="text-3xl md:text-4xl font-bold text-navy mb-4">The Returnable Packaging Problem</h2>
+      <p class="text-gray-500 max-w-2xl mx-auto">Indian enterprises lose ₹1,000s of crores annually to packaging inefficiency. Here's why.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 fu">
+        <div class="text-4xl mb-4">💸</div>
+        <h3 class="text-xl font-bold text-navy mb-3">Hidden Costs Killing Your Margins</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">30–40% of packaging cost is lost in damaged, strayed, or unrecovered assets. Without visibility, losses compound every cycle.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 fu2">
+        <div class="text-4xl mb-4">🔍</div>
+        <h3 class="text-xl font-bold text-navy mb-3">Zero Visibility After Dispatch</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">Once packaging leaves your facility, it vanishes. Hoarding, delays, and non-returns erode your entire returnable asset programme.</p>
+      </div>
+      <div class="bg-white rounded-2xl p-8 shadow-sm border border-gray-100 fu3">
+        <div class="text-4xl mb-4">🌍</div>
+        <h3 class="text-xl font-bold text-navy mb-3">ESG Pressure Without Solutions</h3>
+        <p class="text-gray-500 text-sm leading-relaxed">BRSR, GRI, and Scope 3 mandates demand action. But most companies lack the infrastructure to actually measure and reduce packaging waste.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="bg-white py-20">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-14 fu">
+      <h2 class="text-3xl md:text-4xl font-bold text-navy mb-4">How Yantra Packs Works</h2>
+      <p class="text-gray-500 max-w-xl mx-auto">A fully managed circular packaging loop — from supply to tracking to pooling.</p>
+    </div>
+    <div class="grid md:grid-cols-3 gap-8 relative">
+      <div class="text-center fu">
+        <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-5 text-2xl font-extrabold text-primary">1</div>
+        <h3 class="text-lg font-bold text-navy mb-2">We Supply</h3>
+        <p class="text-gray-500 text-sm">Yantra provides RFID/barcode-tagged, quality-graded returnable packaging ready for your supply chain.</p>
+      </div>
+      <div class="text-center fu2">
+        <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-5 text-2xl font-extrabold text-primary">2</div>
+        <h3 class="text-lg font-bold text-navy mb-2">You Track</h3>
+        <p class="text-gray-500 text-sm">Real-time visibility via Trakkia — location, custody, recovery rate, cost savings — all on one dashboard.</p>
+      </div>
+      <div class="text-center fu3">
+        <div class="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mx-auto mb-5 text-2xl font-extrabold text-primary">3</div>
+        <h3 class="text-lg font-bold text-navy mb-2">We Pool</h3>
+        <p class="text-gray-500 text-sm">Assets returned, cleaned, repaired, and redeployed into the circular pool — zero capex, zero asset management for you.</p>
+      </div>
+    </div>
+    <p class="text-center text-gray-400 text-sm mt-10 fu">No capital expenditure. No asset management headaches. Just results.</p>
+  </div>
+</section>
+
+<!-- TRAKKIA PREVIEW -->
+<section class="bg-navy py-20">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-14">
+      <span class="inline-block bg-primary/20 text-primary border border-primary/30 px-4 py-1 rounded-full text-sm font-semibold mb-4">Proprietary Technology</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Meet Trakkia — Our Tracking Platform</h2>
+      <p class="text-blue-200 max-w-xl mx-auto">Purpose-built for returnable asset management in complex Indian supply chains.</p>
+    </div>
+    <div class="grid md:grid-cols-4 gap-5 mb-10">
+      <div class="bg-white/5 border border-white/10 rounded-xl p-6 text-center hover:bg-white/10 transition-colors fu">
+        <div class="text-3xl mb-3">📡</div>
+        <h3 class="text-white font-bold mb-2">RFID Tracking</h3>
+        <p class="text-blue-300 text-xs">Real-time location of every asset across your entire supply chain network.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-xl p-6 text-center hover:bg-white/10 transition-colors fu2">
+        <div class="text-3xl mb-3">📱</div>
+        <h3 class="text-white font-bold mb-2">Barcode + AIDC</h3>
+        <p class="text-blue-300 text-xs">Works seamlessly with your existing scanning infrastructure and WMS.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-xl p-6 text-center hover:bg-white/10 transition-colors fu3">
+        <div class="text-3xl mb-3">🔄</div>
+        <h3 class="text-white font-bold mb-2">Asset Lifecycle</h3>
+        <p class="text-blue-300 text-xs">Complete history from manufacture to repair, deployment and retirement.</p>
+      </div>
+      <div class="bg-white/5 border border-white/10 rounded-xl p-6 text-center hover:bg-white/10 transition-colors fu3">
+        <div class="text-3xl mb-3">📊</div>
+        <h3 class="text-white font-bold mb-2">Live Dashboard</h3>
+        <p class="text-blue-300 text-xs">Recovery rates, cost reports, overdue alerts — actionable insights daily.</p>
+      </div>
+    </div>
+    <div class="text-center">
+      <a href="technology.html" class="inline-block border-2 border-primary text-primary px-8 py-3 rounded-xl font-bold hover:bg-primary hover:text-white transition-colors">Explore Trakkia →</a>
+    </div>
+  </div>
+</section>
+
+<!-- IMPACT NUMBERS -->
+<section class="bg-primary py-16">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center text-white">
+      <div class="fu"><div class="text-4xl md:text-5xl font-extrabold mb-2">25M+</div><div class="text-blue-100 font-medium text-sm">KG CO₂e Prevented</div></div>
+      <div class="fu2"><div class="text-4xl md:text-5xl font-extrabold mb-2">99.2%</div><div class="text-blue-100 font-medium text-sm">Asset Recovery Rate</div></div>
+      <div class="fu3"><div class="text-4xl md:text-5xl font-extrabold mb-2">40%</div><div class="text-blue-100 font-medium text-sm">Cost Reduction vs Single-Use</div></div>
+      <div class="fu3"><div class="text-4xl md:text-5xl font-extrabold mb-2">500+</div><div class="text-blue-100 font-medium text-sm">Enterprise Clients</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTIONS -->
+<section class="bg-white py-20">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-14 fu">
+      <h2 class="text-3xl md:text-4xl font-bold text-navy mb-4">Flexible Hire Models</h2>
+      <p class="text-gray-500 max-w-xl mx-auto">Choose the model that fits your supply chain — or combine both.</p>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="rounded-2xl overflow-hidden border border-gray-200 shadow-sm fu">
+        <div class="bg-navy px-8 py-5">
+          <h3 class="text-xl font-bold text-white">Transit Hire</h3>
+          <p class="text-blue-200 text-sm mt-1">Packaging that moves with your goods</p>
+        </div>
+        <div class="p-8">
+          <ul class="space-y-3 text-sm text-gray-600 mb-6">
+            <li class="flex items-start gap-2"><span class="text-primary mt-0.5">✓</span>Packaging circulates between supplier, manufacturer, and customer</li>
+            <li class="flex items-start gap-2"><span class="text-primary mt-0.5">✓</span>Ideal for automotive Tier-1/Tier-2 and FMCG replenishment flows</li>
+            <li class="flex items-start gap-2"><span class="text-primary mt-0.5">✓</span>Contract: 12–60 months with flexible scaling</li>
+            <li class="flex items-start gap-2"><span class="text-primary mt-0.5">✓</span>Yantra manages all returns, cleaning, and redeployment</li>
+          </ul>
+          <div class="mb-5">
+            <div class="text-xs font-semibold text-gray-400 uppercase mb-2">Key SKUs</div>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">Foldable Crates</span>
+              <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">PLS Boxes</span>
+              <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">FLCs</span>
+              <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium">Totes</span>
+            </div>
+          </div>
+          <a href="solutions.html" class="text-primary font-semibold text-sm hover:underline">Learn More →</a>
+        </div>
+      </div>
+      <div class="rounded-2xl overflow-hidden border border-gray-200 shadow-sm fu2">
+        <div class="px-8 py-5" style="background:#5a5a5a">
+          <h3 class="text-xl font-bold text-white">Static Hire</h3>
+          <p class="text-gray-200 text-sm mt-1">Packaging stationed at your facility</p>
+        </div>
+        <div class="p-8">
+          <ul class="space-y-3 text-sm text-gray-600 mb-6">
+            <li class="flex items-start gap-2"><span class="text-primary mt-0.5">✓</span>Packaging remains at one location — warehouse, plant, or DC</li>
+            <li class="flex items-start gap-2"><span class="text-primary mt-0.5">✓</span>Ideal for WIP storage, in-plant logistics, bulk material handling</li>
+            <li class="flex items-start gap-2"><span class="text-primary mt-0.5">✓</span>Contract: 12–36 months, scalable by volume</li>
+            <li class="flex items-start gap-2"><span class="text-primary mt-0.5">✓</span>Periodic maintenance and asset health checks included</li>
+          </ul>
+          <div class="mb-5">
+            <div class="text-xs font-semibold text-gray-400 uppercase mb-2">Key SKUs</div>
+            <div class="flex flex-wrap gap-2">
+              <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs font-medium">PP Boxes</span>
+              <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs font-medium">Metal Stillage</span>
+              <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs font-medium">Trolleys</span>
+              <span class="bg-gray-100 text-gray-600 px-3 py-1 rounded-full text-xs font-medium">PP Inserts</span>
+            </div>
+          </div>
+          <a href="solutions.html" class="text-primary font-semibold text-sm hover:underline">Learn More →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS TEASER -->
+<section class="bg-gray-50 py-20">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-14 fu">
+      <h2 class="text-3xl md:text-4xl font-bold text-navy mb-4">Our Packaging Range</h2>
+      <p class="text-gray-500 max-w-xl mx-auto">8 product families, 200+ SKUs — all tracked, pooled, and managed.</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mb-8">
+      <div class="bg-white rounded-xl p-6 text-center shadow-sm border border-gray-100 fu">
+        <div class="text-4xl mb-3">📦</div>
+        <span class="inline-block bg-primary/10 text-primary text-xs font-semibold px-2 py-0.5 rounded-full mb-3">Track &amp; Pool</span>
+        <h3 class="font-bold text-navy text-sm">Foldable Crate</h3>
+        <p class="text-gray-400 text-xs mt-1">Collapsible for efficient empty-return trips</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 text-center shadow-sm border border-gray-100 fu2">
+        <div class="text-4xl mb-3">🗃️</div>
+        <span class="inline-block bg-primary/10 text-primary text-xs font-semibold px-2 py-0.5 rounded-full mb-3">Track &amp; Pool</span>
+        <h3 class="font-bold text-navy text-sm">PLS Box</h3>
+        <p class="text-gray-400 text-xs mt-1">Pallet-sized for bulk transit loads</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 text-center shadow-sm border border-gray-100 fu3">
+        <div class="text-4xl mb-3">🔩</div>
+        <span class="inline-block bg-primary/10 text-primary text-xs font-semibold px-2 py-0.5 rounded-full mb-3">Track &amp; Pool</span>
+        <h3 class="font-bold text-navy text-sm">Metal Stillage</h3>
+        <p class="text-gray-400 text-xs mt-1">Heavy-duty for engineered components</p>
+      </div>
+      <div class="bg-white rounded-xl p-6 text-center shadow-sm border border-gray-100 fu3">
+        <div class="text-4xl mb-3">🧩</div>
+        <span class="inline-block bg-primary/10 text-primary text-xs font-semibold px-2 py-0.5 rounded-full mb-3">Track &amp; Pool</span>
+        <h3 class="font-bold text-navy text-sm">Vacuum Forming Tray</h3>
+        <p class="text-gray-400 text-xs mt-1">Custom-fit precision for delicate parts</p>
+      </div>
+    </div>
+    <div class="text-center fu">
+      <a href="products.html" class="inline-block border-2 border-navy text-navy px-8 py-3 rounded-xl font-bold hover:bg-navy hover:text-white transition-colors">View All Products →</a>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="bg-white py-20">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-14 fu">
+      <h2 class="text-3xl md:text-4xl font-bold text-navy mb-4">Industries We Serve</h2>
+      <p class="text-gray-500 max-w-xl mx-auto">From automotive Tier-1 to FMCG to pharma cold-chain — we have the packaging and the track record.</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+      <a href="industries.html" class="bg-gray-50 hover:bg-primary/5 border border-gray-200 hover:border-primary/30 rounded-xl p-5 text-center transition-all fu">
+        <div class="text-3xl mb-2">🚗</div><div class="font-semibold text-navy text-sm">Automotive</div>
+      </a>
+      <a href="industries.html" class="bg-gray-50 hover:bg-primary/5 border border-gray-200 hover:border-primary/30 rounded-xl p-5 text-center transition-all fu2">
+        <div class="text-3xl mb-2">🛒</div><div class="font-semibold text-navy text-sm">FMCG</div>
+      </a>
+      <a href="industries.html" class="bg-gray-50 hover:bg-primary/5 border border-gray-200 hover:border-primary/30 rounded-xl p-5 text-center transition-all fu2">
+        <div class="text-3xl mb-2">💊</div><div class="font-semibold text-navy text-sm">Pharma</div>
+      </a>
+      <a href="industries.html" class="bg-gray-50 hover:bg-primary/5 border border-gray-200 hover:border-primary/30 rounded-xl p-5 text-center transition-all fu3">
+        <div class="text-3xl mb-2">📦</div><div class="font-semibold text-navy text-sm">E-Commerce</div>
+      </a>
+      <a href="industries.html" class="bg-gray-50 hover:bg-primary/5 border border-gray-200 hover:border-primary/30 rounded-xl p-5 text-center transition-all fu3">
+        <div class="text-3xl mb-2">⚙️</div><div class="font-semibold text-navy text-sm">Engineering</div>
+      </a>
+      <a href="industries.html" class="bg-gray-50 hover:bg-primary/5 border border-gray-200 hover:border-primary/30 rounded-xl p-5 text-center transition-all fu3">
+        <div class="text-3xl mb-2">🧪</div><div class="font-semibold text-navy text-sm">Chemicals</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- SUSTAINABILITY -->
+<section class="py-20" style="background:#071a0f">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-14 fu">
+      <span class="inline-block px-4 py-1 rounded-full text-sm font-semibold mb-4 border" style="background:rgba(0,196,140,0.15);color:#00C48C;border-color:rgba(0,196,140,0.3)">Circular Economy</span>
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Packaging That Gives Back to the Planet</h2>
+      <p class="max-w-xl mx-auto" style="color:#86efac">Every Yantra pack reused is a single-use pack not made. Every trip is a carbon story.</p>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-5 mb-14">
+      <div class="rounded-xl p-6 text-center fu" style="background:rgba(0,196,140,0.1);border:1px solid rgba(0,196,140,0.2)">
+        <div class="text-3xl font-extrabold text-white mb-1">25M</div>
+        <div class="text-xs font-bold mb-1" style="color:#00C48C">KG CO₂e</div>
+        <div class="text-xs" style="color:#86efac">Prevented till date</div>
+      </div>
+      <div class="rounded-xl p-6 text-center fu2" style="background:rgba(0,196,140,0.1);border:1px solid rgba(0,196,140,0.2)">
+        <div class="text-3xl font-extrabold text-white mb-1">200+</div>
+        <div class="text-xs font-bold mb-1" style="color:#00C48C">Trips</div>
+        <div class="text-xs" style="color:#86efac">Per asset lifecycle</div>
+      </div>
+      <div class="rounded-xl p-6 text-center fu3" style="background:rgba(0,196,140,0.1);border:1px solid rgba(0,196,140,0.2)">
+        <div class="text-3xl font-extrabold text-white mb-1">50x</div>
+        <div class="text-xs font-bold mb-1" style="color:#00C48C">Reuse</div>
+        <div class="text-xs" style="color:#86efac">vs single-use boxes</div>
+      </div>
+      <div class="rounded-xl p-6 text-center fu3" style="background:rgba(0,196,140,0.1);border:1px solid rgba(0,196,140,0.2)">
+        <div class="text-3xl font-extrabold text-white mb-1">80%</div>
+        <div class="text-xs font-bold mb-1" style="color:#00C48C">Lower CO₂</div>
+        <div class="text-xs" style="color:#86efac">Per trip vs corrugated</div>
+      </div>
+    </div>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="rounded-xl p-6 fu" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1)">
+        <h3 class="font-bold text-white mb-2">♻️ Circular Economy Model</h3>
+        <p class="text-sm" style="color:#86efac">Our assets flow in a closed loop: Manufacture → Pool → Deploy → Use → Return → Clean → Redeploy. No packaging ends in landfill.</p>
+      </div>
+      <div class="rounded-xl p-6 fu2" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1)">
+        <h3 class="font-bold text-white mb-2">📋 BRSR / GRI Reporting Ready</h3>
+        <p class="text-sm" style="color:#86efac">Trakkia generates Scope 3 packaging emission reports aligned with BRSR, GRI, and CDP frameworks — ready for your sustainability disclosure.</p>
+      </div>
+    </div>
+    <div class="text-center mt-10 fu">
+      <a href="sustainability.html" class="inline-block border-2 px-8 py-3 rounded-xl font-bold transition-colors" style="border-color:#00C48C;color:#00C48C" onmouseover="this.style.background='#00C48C';this.style.color='#071a0f'" onmouseout="this.style.background='transparent';this.style.color='#00C48C'">Our Sustainability Story →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CUSTOMERS -->
+<section class="bg-white py-20">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="text-center mb-14 fu">
+      <h2 class="text-3xl md:text-4xl font-bold text-navy mb-4">Trusted by India's Leading Enterprises</h2>
+      <p class="text-gray-500 max-w-xl mx-auto">From Mahindra to Flipkart — the names that trust Yantra Packs to protect their supply chains.</p>
+    </div>
+    <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3 mb-12 fu">
+      <div class="border border-gray-200 rounded-lg py-3 px-2 text-center text-xs font-semibold text-gray-600 hover:border-primary hover:text-primary transition-colors">Mahindra</div>
+      <div class="border border-gray-200 rounded-lg py-3 px-2 text-center text-xs font-semibold text-gray-600 hover:border-primary hover:text-primary transition-colors">TATA</div>
+      <div class="border border-gray-200 rounded-lg py-3 px-2 text-center text-xs font-semibold text-gray-600 hover:border-primary hover:text-primary transition-colors">Hyundai</div>
+      <div class="border border-gray-200 rounded-lg py-3 px-2 text-center text-xs font-semibold text-gray-600 hover:border-primary hover:text-primary transition-colors">Toyota</div>
+      <div class="border border-gray-200 rounded-lg py-3 px-2 text-center text-xs font-semibold text-gray-600 hover:border-primary hover:text-primary transition-colors">JCB</div>
+      <div class="border border-gray-200 rounded-lg py-3 px-2 text-center text-xs font-semibold text-gray-600 hover:border-primary hover:text-primary transition-colors">Eicher</div>
+      <div class="border border-gray-200 rounded-lg py-3 px-2 text-center text-xs font-semibold text-gray-600 hover:border-primary hover:text-primary transition-colors">FIAT</div>
+      <div class="border border-gray-200 rounded-lg py-3 px-2 text-center text-xs font-semibold text-gray-600 hover:border-primary hover:text-primary transition-colors">Kubota</div>
+      <div class="border border-gray-200 rounded-lg py-3 px-2 text-center text-xs font-semibold text-gray-600 hover:border-primary hover:text-primary transition-colors">Flipkart</div>
+      <div class="border border-gray-200 rounded-lg py-3 px-2 text-center text-xs font-semibold text-gray-600 hover:border-primary hover:text-primary transition-colors">Delhivery</div>
+      <div class="border border-gray-200 rounded-lg py-3 px-2 text-center text-xs font-semibold text-gray-600 hover:border-primary hover:text-primary transition-colors">ABInBev</div>
+      <div class="border border-gray-200 rounded-lg py-3 px-2 text-center text-xs font-semibold text-gray-600 hover:border-primary hover:text-primary transition-colors">Pernod Ricard</div>
+      <div class="border border-gray-200 rounded-lg py-3 px-2 text-center text-xs font-semibold text-gray-600 hover:border-primary hover:text-primary transition-colors">DENSO</div>
+      <div class="border border-gray-200 rounded-lg py-3 px-2 text-center text-xs font-semibold text-gray-600 hover:border-primary hover:text-primary transition-colors">TAFE</div>
+      <div class="border border-gray-200 rounded-lg py-3 px-2 text-center text-xs font-semibold text-gray-600 hover:border-primary hover:text-primary transition-colors">Lumax</div>
+      <div class="border border-gray-200 rounded-lg py-3 px-2 text-center text-xs font-semibold text-gray-600 hover:border-primary hover:text-primary transition-colors">Gabriel</div>
+      <div class="border border-gray-200 rounded-lg py-3 px-2 text-center text-xs font-semibold text-gray-600 hover:border-primary hover:text-primary transition-colors">Raicam</div>
+      <div class="border border-gray-200 rounded-lg py-3 px-2 text-center text-xs font-semibold text-gray-600 hover:border-primary hover:text-primary transition-colors">Delphi-TVS</div>
+      <div class="border border-gray-200 rounded-lg py-3 px-2 text-center text-xs font-semibold text-gray-600 hover:border-primary hover:text-primary transition-colors">INFAC</div>
+      <div class="border border-gray-200 rounded-lg py-3 px-2 text-center text-xs font-semibold text-gray-600 hover:border-primary hover:text-primary transition-colors">Tata Autocomp</div>
+      <div class="border border-gray-200 rounded-lg py-3 px-2 text-center text-xs font-semibold text-gray-600 hover:border-primary hover:text-primary transition-colors">MTA Autocraft</div>
+      <div class="border border-gray-200 rounded-lg py-3 px-2 text-center text-xs font-semibold text-gray-600 hover:border-primary hover:text-primary transition-colors">SQT</div>
+      <div class="border border-gray-200 rounded-lg py-3 px-2 text-center text-xs font-semibold text-gray-600 hover:border-primary hover:text-primary transition-colors">UB Group</div>
+      <div class="border border-gray-200 rounded-lg py-3 px-2 text-center text-xs font-semibold text-gray-600 hover:border-primary hover:text-primary transition-colors">InfinityBox</div>
+    </div>
+    <div class="bg-gray-50 rounded-2xl p-8 max-w-3xl mx-auto text-center fu">
+      <p class="text-lg text-gray-700 italic mb-4">"Yantra Packs helped us reduce packaging losses by 38% in the first year. The Trakkia dashboard gives us visibility we never had before — we can now track every crate across 14 plants in real time."</p>
+      <div class="font-semibold text-navy text-sm">— Supply Chain Head, Leading Automotive OEM</div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="py-20 bg-gradient-to-r from-navy via-[#0f3d5c] to-primary">
+  <div class="max-w-4xl mx-auto px-4 text-center">
+    <h2 class="text-3xl md:text-4xl font-bold text-white mb-4 fu">Ready to Transform Your Packaging Operations?</h2>
+    <p class="text-blue-100 text-lg mb-8 fu2">Join 500+ enterprises that have cut packaging costs, boosted asset recovery, and met ESG goals with Yantra Packs.</p>
+    <div class="flex flex-wrap justify-center gap-4 mb-8 fu3">
+      <a href="contact.html" class="bg-cta text-white px-8 py-4 rounded-xl font-bold text-base hover:bg-orange-600 transition-colors shadow-lg">Book a Free Demo</a>
+      <a href="contact.html" class="border-2 border-white/40 text-white px-8 py-4 rounded-xl font-bold text-base hover:bg-white/10 transition-colors">Talk to an Expert</a>
+    </div>
+    <p class="text-blue-200 text-sm fu">+91 9958 322 477 &nbsp;·&nbsp; sales@yantrapacks.com &nbsp;·&nbsp; B-13/14 Sector 32, Gurugram</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#040d18" class="py-14">
+  <div class="max-w-7xl mx-auto px-4">
+    <div class="grid md:grid-cols-4 gap-8 mb-10">
+      <div>
+        <div class="flex mb-4">
+          <span style="background:#1BA9DE;color:#fff;font-weight:800;padding:5px 10px;font-family:Space Grotesk,sans-serif;font-size:13px;">YANTRA</span><span style="background:#7A7A7A;color:#fff;font-weight:800;padding:5px 10px;font-family:Space Grotesk,sans-serif;font-size:13px;">PACKS</span>
+        </div>
+        <p class="text-gray-400 text-sm mb-4 leading-relaxed">India's leading returnable packaging pooling company. Tracked. Sustainable. Technology-enabled.</p>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Solutions</h4>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li><a href="solutions.html" class="hover:text-primary transition-colors">Transit Hire</a></li>
+          <li><a href="solutions.html" class="hover:text-primary transition-colors">Static Hire</a></li>
+          <li><a href="technology.html" class="hover:text-primary transition-colors">Trakkia Platform</a></li>
+          <li><a href="products.html" class="hover:text-primary transition-colors">Products</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Company</h4>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li><a href="about.html" class="hover:text-primary transition-colors">About Us</a></li>
+          <li><a href="industries.html" class="hover:text-primary transition-colors">Industries</a></li>
+          <li><a href="sustainability.html" class="hover:text-primary transition-colors">Sustainability</a></li>
+          <li><a href="contact.html" class="hover:text-primary transition-colors">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-4 uppercase tracking-wider">Contact</h4>
+        <ul class="space-y-2 text-sm text-gray-400">
+          <li>+91 9958 322 477</li>
+          <li>sales@yantrapacks.com</li>
+          <li class="leading-relaxed">B-13/14, Sector 32<br>Gurugram, Haryana</li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-gray-800 pt-6 text-center text-sm text-gray-500">
+      © 2025 Yantra Packs. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+document.getElementById('mb').addEventListener('click', function() {
+  document.getElementById('mm').classList.toggle('hidden');
+});
+const obs = new IntersectionObserver(function(entries) {
+  entries.forEach(function(e) {
+    if (e.isIntersecting) e.target.classList.add('visible');
+  });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fu, .fu2, .fu3').forEach(function(el) { obs.observe(el); });
+</script>
+</body>
+</html>
