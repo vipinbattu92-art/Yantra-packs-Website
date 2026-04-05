@@ -213,3 +213,17 @@ img { max-width: 100%; }
   .hero-stats { grid-template-columns: 1fr; }
   .dash-cards { grid-template-columns: 1fr; }
 }
+
+/* Tab Component (technology.html) */
+.tab-btn { transition: all 0.2s; }
+.tab-btn.active { background: #1BA9DE !important; border-color: #1BA9DE !important; color: #fff !important; }
+.tab-panel { display: block; }
+.tab-panel + .tab-panel { display: none; }
+
+/* Comparison table */
+table th, table td { vertical-align: middle; }
+
+/* Contact form responsive */
+@media (max-width: 640px) {
+  .contact-form [style*="grid-template-columns:1fr 1fr"] { display: block !important; }
+}
