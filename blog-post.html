@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="page-title">Blog Post | Yantra Packs</title>
+<meta name="description" id="page-desc" content="Returnable packaging insights from Yantra Packs — India's leading packaging pooling company.">
+<link rel="canonical" id="page-canonical" href="https://www.yantrapacks.com/blog-post.html">
+<meta property="og:title" id="og-title" content="Blog | Yantra Packs">
+<meta property="og:description" id="og-desc" content="Returnable packaging insights from Yantra Packs.">
+<meta property="og:type" content="article">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<style>
+.post-hero { background: var(--navy); padding: 120px 0 64px; position: relative; overflow: hidden; }
+.post-hero::before { content:""; position:absolute; inset:0; background: radial-gradient(ellipse 70% 60% at 50% 40%, rgba(27,169,222,0.12) 0%, transparent 70%); }
+.post-hero .container { position: relative; }
+.post-breadcrumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: rgba(255,255,255,0.45); margin-bottom: 24px; }
+.post-breadcrumb a { color: rgba(255,255,255,0.45); transition: color 0.2s; }
+.post-breadcrumb a:hover { color: var(--primary); }
+.post-breadcrumb span { color: rgba(255,255,255,0.2); }
+.post-hero h1 { font-size: clamp(28px,4vw,48px); font-weight: 900; color: #fff; line-height: 1.15; margin-bottom: 20px; max-width: 800px; }
+.post-hero-meta { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.post-hero-meta span { font-size: 13px; color: rgba(255,255,255,0.5); display: flex; align-items: center; gap: 6px; }
+.post-hero-meta .author-name { color: rgba(255,255,255,0.75); font-weight: 600; }
+.post-featured-img { width: 100%; max-height: 460px; object-fit: cover; border-radius: 20px; margin-bottom: 48px; }
+.post-layout { display: grid; grid-template-columns: 1fr 300px; gap: 56px; align-items: start; }
+.post-content { font-size: 17px; line-height: 1.85; color: #374151; }
+.post-content h2 { font-size: clamp(22px,3vw,30px); font-weight: 800; color: var(--navy); margin: 40px 0 16px; line-height: 1.25; }
+.post-content h3 { font-size: 20px; font-weight: 700; color: var(--navy); margin: 32px 0 12px; }
+.post-content p { margin-bottom: 20px; }
+.post-content ul, .post-content ol { margin: 0 0 20px 24px; }
+.post-content li { margin-bottom: 8px; }
+.post-content blockquote { border-left: 4px solid var(--primary); padding: 16px 20px; background: rgba(27,169,222,0.06); border-radius: 0 12px 12px 0; margin: 28px 0; font-style: italic; color: #4b5563; }
+.post-content a { color: var(--primary); text-decoration: underline; }
+.post-content img { border-radius: 12px; margin: 28px 0; max-width: 100%; }
+.post-content pre { background: #0f1729; border-radius: 12px; padding: 20px 24px; overflow-x: auto; margin: 24px 0; }
+.post-content code { font-family: monospace; font-size: 14px; color: #93c5fd; }
+.post-content p code { background: #f3f4f6; color: #e63946; padding: 2px 6px; border-radius: 4px; }
+.post-tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--border); }
+.post-tag { background: var(--bg-light); color: var(--text-muted); padding: 5px 13px; border-radius: 99px; font-size: 13px; border: 1px solid var(--border); }
+/* Sidebar */
+.post-sidebar { position: sticky; top: 88px; }
+.sidebar-card { background: #fff; border: 1px solid var(--border); border-radius: 18px; padding: 28px; margin-bottom: 24px; }
+.sidebar-card h3 { font-size: 14px; font-weight: 700; color: var(--navy); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 18px; }
+.toc-list { list-style: none; }
+.toc-list li { border-bottom: 1px solid #f3f4f6; }
+.toc-list li:last-child { border-bottom: none; }
+.toc-list li a { display: block; padding: 9px 0; font-size: 13px; color: var(--text-muted); transition: color 0.2s; }
+.toc-list li a:hover { color: var(--primary); }
+.related-post { display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid #f3f4f6; }
+.related-post:last-child { border-bottom: none; }
+.related-thumb { width: 56px; height: 56px; border-radius: 10px; background: linear-gradient(135deg,var(--navy),#1490c0); flex-shrink: 0; overflow: hidden; }
+.related-thumb img { width: 100%; height: 100%; object-fit: cover; }
+.related-info h4 { font-size: 13px; font-weight: 600; color: var(--navy); line-height: 1.35; margin-bottom: 4px; }
+.related-info span { font-size: 11px; color: #9ca3af; }
+.cta-sidebar { background: linear-gradient(135deg, var(--navy), #0d3458); border-color: transparent; }
+.cta-sidebar h3 { color: #fff; }
+.cta-sidebar p { font-size: 14px; color: rgba(255,255,255,0.65); margin-bottom: 18px; line-height: 1.6; }
+/* Loading */
+.post-loading { text-align: center; padding: 120px 0; }
+.post-loading .spinner { width: 48px; height: 48px; border: 3px solid rgba(27,169,222,0.2); border-top-color: var(--primary); border-radius: 50%; animation: spin 0.8s linear infinite; margin: 0 auto 20px; }
+@keyframes spin { to { transform: rotate(360deg); } }
+/* Responsive */
+@media (max-width: 1024px) { .post-layout { grid-template-columns: 1fr; } .post-sidebar { position: static; } }
+@media (max-width: 768px) { .post-hero h1 { font-size: 26px; } }
+</style>
+</head>
+<body>
+<nav class="navbar" id="navbar">
+  <div class="container">
+    <a href="index.html" class="nav-logo">
+      <span class="logo-yantra">YANTRA</span><span class="logo-packs">PACKS</span>
+    </a>
+    <div class="nav-links">
+      <a href="solutions.html">Solutions</a>
+      <a href="technology.html">Technology</a>
+      <a href="products.html">Products</a>
+      <a href="industries.html">Industries</a>
+      <a href="sustainability.html">Sustainability</a>
+      <a href="about.html">About</a>
+      <a href="blog.html" style="color:var(--primary)">Blog</a>
+    </div>
+    <div class="nav-actions">
+      <a href="https://app.trakkia.com" target="_blank" rel="noopener" class="btn-login">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+        Customer Login
+      </a>
+      <a href="contact.html" class="btn-demo">Book a Demo</a>
+    </div>
+    <button class="hamburger" id="mb" aria-label="Menu">
+      <svg width="22" height="22" fill="none" stroke="#374151" stroke-width="2.5" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mm">
+    <a href="https://app.trakkia.com" target="_blank" class="mobile-login">🔐 Customer Login</a>
+    <a href="solutions.html">Solutions</a>
+    <a href="technology.html">Technology</a>
+    <a href="products.html">Products</a>
+    <a href="industries.html">Industries</a>
+    <a href="sustainability.html">Sustainability</a>
+    <a href="about.html">About</a>
+    <a href="blog.html">Blog</a>
+    <a href="contact.html">Book a Demo</a>
+  </div>
+</nav>
+
+<!-- POST HERO (filled by JS) -->
+<section class="post-hero" id="post-hero">
+  <div class="container">
+    <div class="post-breadcrumb">
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <a href="blog.html">Blog</a>
+      <span>›</span>
+      <span id="breadcrumb-title">Loading…</span>
+    </div>
+    <div id="hero-loading" class="post-loading">
+      <div class="spinner"></div>
+      <p style="color:rgba(255,255,255,0.5)">Loading article…</p>
+    </div>
+    <div id="hero-content" style="display:none;">
+      <div id="post-category-badge"></div>
+      <h1 id="post-title-h1"></h1>
+      <div class="post-hero-meta">
+        <span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          <span id="post-read-time">5 min read</span>
+        </span>
+        <span>
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          <span id="post-date"></span>
+        </span>
+        <span>By <span class="author-name" id="post-author">Yantra Packs Team</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- POST BODY -->
+<section class="section" style="padding-top:56px;">
+  <div class="container">
+    <div id="post-body-loading" class="post-loading">
+      <div class="spinner"></div>
+    </div>
+    <div id="post-body" style="display:none;">
+      <img id="post-featured-img" class="post-featured-img" src="" alt="" style="display:none;">
+      <div class="post-layout">
+        <div>
+          <div class="post-content" id="post-content-body"></div>
+          <div class="post-tags" id="post-tags"></div>
+        </div>
+        <aside class="post-sidebar">
+          <div class="sidebar-card">
+            <h3>In This Article</h3>
+            <ul class="toc-list" id="toc-list">
+              <li><a href="#">Loading…</a></li>
+            </ul>
+          </div>
+          <div class="sidebar-card">
+            <h3>Related Articles</h3>
+            <div id="related-posts">Loading…</div>
+          </div>
+          <div class="sidebar-card cta-sidebar">
+            <h3>Ready to Start Pooling?</h3>
+            <p>Join 500+ companies cutting packaging costs by up to 40% with Yantra Packs.</p>
+            <a href="contact.html" class="btn-primary" style="width:100%;justify-content:center;font-size:14px;padding:12px;">Book a Free Demo →</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <a href="index.html" class="nav-logo" style="margin-bottom:16px;display:inline-flex;">
+          <span class="logo-yantra">YANTRA</span><span class="logo-packs">PACKS</span>
+        </a>
+        <p class="footer-tagline">India's tech-enabled returnable packaging pooling company.</p>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="solutions.html">Solutions</a></li>
+          <li><a href="technology.html">Trakkia Platform</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul>
+          <li><a href="products.html">All Products</a></li>
+          <li><a href="industries.html">Industries</a></li>
+          <li><a href="sustainability.html">Sustainability</a></li>
+          <li><a href="https://packit.yantrapacks.com" target="_blank">PackIt Calculator</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contact</h4>
+        <ul>
+          <li>📍 B-13/14 Sector 32, Gurugram</li>
+          <li>📞 <a href="tel:+919958322477">+91 9958 322 477</a></li>
+          <li>✉️ <a href="mailto:sales@yantrapacks.com">sales@yantrapacks.com</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bar">© 2025 Yantraksh Logistics Pvt Ltd. All rights reserved.</div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+// ── WordPress REST API Single Post Loader ───────────────────────
+const WP_API = 'https://www.yantrapacks.com/wp-json/wp/v2';
+
+function getSlug() {
+  return new URLSearchParams(window.location.search).get('slug');
+}
+
+function formatDate(d) {
+  return new Date(d).toLocaleDateString('en-IN', { day: 'numeric', month: 'long', year: 'numeric' });
+}
+
+function stripHtml(html) {
+  const t = document.createElement('div'); t.innerHTML = html;
+  return t.textContent || '';
+}
+
+function readingTime(html) {
+  const words = stripHtml(html).split(/\s+/).length;
+  return Math.max(1, Math.round(words / 200)) + ' min read';
+}
+
+function buildToc(contentEl) {
+  const headings = contentEl.querySelectorAll('h2, h3');
+  if (!headings.length) { document.querySelector('.sidebar-card').style.display = 'none'; return; }
+  const tocEl = document.getElementById('toc-list');
+  tocEl.innerHTML = Array.from(headings).map((h, i) => {
+    const id = 'heading-' + i;
+    h.id = id;
+    return `<li style="${h.tagName==='H3'?'padding-left:12px':''}">
+      <a href="#${id}">${h.textContent}</a>
+    </li>`;
+  }).join('');
+}
+
+async function loadRelated(catIds) {
+  const el = document.getElementById('related-posts');
+  if (!catIds || !catIds.length) { el.innerHTML = '<p style="font-size:13px;color:#9ca3af">No related articles.</p>'; return; }
+  try {
+    const res = await fetch(`${WP_API}/posts?per_page=3&categories=${catIds[0]}&_embed=1`);
+    const posts = await res.json();
+    el.innerHTML = posts.slice(0,3).map(p => {
+      const img = p._embedded?.['wp:featuredmedia']?.[0]?.source_url;
+      return `<div class="related-post">
+        <div class="related-thumb">${img ? `<img src="${img}" alt="">` : ''}</div>
+        <div class="related-info">
+          <h4><a href="blog-post.html?slug=${p.slug}" style="color:inherit">${stripHtml(p.title.rendered)}</a></h4>
+          <span>${formatDate(p.date)}</span>
+        </div>
+      </div>`;
+    }).join('');
+  } catch(e) {
+    el.innerHTML = '<p style="font-size:13px;color:#9ca3af">Could not load related articles.</p>';
+  }
+}
+
+async function loadPost() {
+  const slug = getSlug();
+  if (!slug) {
+    window.location.href = 'blog.html';
+    return;
+  }
+
+  try {
+    const res = await fetch(`${WP_API}/posts?slug=${slug}&_embed=1`);
+    const posts = await res.json();
+    if (!posts.length) throw new Error('not found');
+    const post = posts[0];
+
+    const title = stripHtml(post.title.rendered);
+    const catName = post._embedded?.['wp:term']?.[0]?.[0]?.name || 'Insights';
+    const catIds = post.categories || [];
+    const author = post._embedded?.['author']?.[0]?.name || 'Yantra Packs Team';
+    const featuredImg = post._embedded?.['wp:featuredmedia']?.[0]?.source_url;
+    const tags = post._embedded?.['wp:term']?.[1] || [];
+
+    // Update meta
+    document.getElementById('page-title').textContent = title + ' | Yantra Packs';
+    document.getElementById('page-desc').content = truncateStr(stripHtml(post.excerpt.rendered), 155);
+    document.getElementById('og-title').content = title;
+    document.getElementById('og-desc').content = truncateStr(stripHtml(post.excerpt.rendered), 155);
+    document.getElementById('page-canonical').href = 'https://www.yantrapacks.com/blog-post.html?slug=' + slug;
+
+    // Hero
+    document.getElementById('breadcrumb-title').textContent = truncateStr(title, 40);
+    document.getElementById('hero-loading').style.display = 'none';
+    document.getElementById('hero-content').style.display = 'block';
+    document.getElementById('post-category-badge').innerHTML = `<span class="section-tag" style="margin-bottom:16px;">${catName}</span>`;
+    document.getElementById('post-title-h1').textContent = title;
+    document.getElementById('post-date').textContent = formatDate(post.date);
+    document.getElementById('post-read-time').textContent = readingTime(post.content.rendered);
+    document.getElementById('post-author').textContent = author;
+
+    // Body
+    document.getElementById('post-body-loading').style.display = 'none';
+    document.getElementById('post-body').style.display = 'block';
+
+    if (featuredImg) {
+      const imgEl = document.getElementById('post-featured-img');
+      imgEl.src = featuredImg; imgEl.alt = title; imgEl.style.display = 'block';
+    }
+
+    const contentEl = document.getElementById('post-content-body');
+    contentEl.innerHTML = post.content.rendered;
+
+    // Tags
+    if (tags.length) {
+      document.getElementById('post-tags').innerHTML = tags.map(t =>
+        `<span class="post-tag">#${t.name}</span>`
+      ).join('');
+    }
+
+    buildToc(contentEl);
+    loadRelated(catIds);
+
+  } catch (err) {
+    document.getElementById('post-body-loading').innerHTML = `
+      <div style="text-align:center;padding:80px 0;">
+        <div style="font-size:56px;margin-bottom:16px">📦</div>
+        <h2 style="color:var(--navy);margin-bottom:12px">Article not found</h2>
+        <p style="color:var(--text-muted);margin-bottom:28px">This article may have moved or been removed.</p>
+        <a href="blog.html" class="btn-primary">← Back to Blog</a>
+      </div>`;
+    document.getElementById('hero-loading').style.display = 'none';
+    document.getElementById('hero-content').style.display = 'block';
+    document.getElementById('post-title-h1').textContent = 'Article Not Found';
+    document.getElementById('breadcrumb-title').textContent = 'Not Found';
+    document.getElementById('post-date').textContent = '';
+    document.getElementById('post-author').textContent = '';
+    document.getElementById('post-read-time').textContent = '';
+  }
+}
+
+function truncateStr(str, n) {
+  return str.length > n ? str.substring(0, n-1) + '…' : str;
+}
+
+loadPost();
+</script>
+</body>
+</html>

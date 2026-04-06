@@ -5,11 +5,13 @@
 :root {
   --primary: #1BA9DE;
   --primary-dark: #1490c0;
-  --navy: #0D2B45;
-  --navy-light: #0f3458;
+  --navy: #060f1a;
+  --navy-light: #0d2240;
+  --violet: #8B5CF6;
+  --violet-dark: #7c3aed;
   --eco: #00C48C;
-  --cta: #FF6B35;
-  --cta-dark: #e05a28;
+  --cta: #F97316;
+  --cta-dark: #ea6c0e;
   --gray: #7A7A7A;
   --text: #111827;
   --text-muted: #6b7280;
@@ -112,10 +114,18 @@ img { max-width: 100%; display: block; }
   background: var(--cta); color: #fff;
   padding: 14px 32px; border-radius: 12px;
   font-weight: 700; font-size: 16px;
-  box-shadow: 0 4px 20px rgba(255,107,53,0.35);
-  transition: all 0.2s;
+  box-shadow: 0 4px 20px rgba(249,115,22,0.35);
+  transition: all 0.25s cubic-bezier(0.34,1.56,0.64,1);
+  position: relative; overflow: hidden;
 }
-.btn-primary:hover { background: var(--cta-dark); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(255,107,53,0.45); }
+.btn-primary::after {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 60%);
+  opacity: 0; transition: opacity 0.2s;
+}
+.btn-primary:hover { background: var(--cta-dark); transform: translateY(-3px) scale(1.02); box-shadow: 0 10px 32px rgba(249,115,22,0.5); }
+.btn-primary:hover::after { opacity: 1; }
+.btn-primary:active { transform: translateY(-1px) scale(0.99); }
 .btn-outline-white {
   display: inline-flex; align-items: center; gap: 8px;
   border: 2px solid rgba(255,255,255,0.35); color: #fff;
@@ -143,18 +153,18 @@ img { max-width: 100%; display: block; }
   position: relative; min-height: 100vh;
   display: flex; align-items: center;
   padding-top: 68px; overflow: hidden;
-  background: #050d1a;
+  background: var(--navy);
 }
 .hero::before {
   content: "";
   position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse 80% 60% at 60% 40%, rgba(27,169,222,0.18) 0%, transparent 70%),
-    radial-gradient(ellipse 50% 50% at 10% 80%, rgba(0,196,140,0.08) 0%, transparent 60%),
-    radial-gradient(ellipse 60% 40% at 90% 10%, rgba(13,43,69,0.8) 0%, transparent 70%);
+    radial-gradient(ellipse 80% 60% at 60% 40%, rgba(27,169,222,0.15) 0%, transparent 70%),
+    radial-gradient(ellipse 50% 50% at 10% 80%, rgba(0,196,140,0.07) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 85% 15%, rgba(139,92,246,0.12) 0%, transparent 65%);
 }
 .hero-grid {
-  position: absolute; inset: 0; opacity: 0.04;
+  position: absolute; inset: 0; opacity: 0.035;
   background-image: linear-gradient(var(--primary) 1px, transparent 1px), linear-gradient(90deg, var(--primary) 1px, transparent 1px);
   background-size: 60px 60px;
 }
@@ -219,13 +229,21 @@ img { max-width: 100%; display: block; }
   background: #fff; border-radius: 18px; padding: 32px;
   border: 1px solid var(--border);
   box-shadow: 0 1px 3px rgba(0,0,0,0.04), 0 4px 16px rgba(0,0,0,0.04);
-  transition: all 0.3s;
+  transition: all 0.3s cubic-bezier(0.34,1.2,0.64,1);
+  position: relative; overflow: hidden;
+}
+.card::before {
+  content: ""; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--primary), var(--violet));
+  transform: scaleX(0); transform-origin: left;
+  transition: transform 0.35s ease;
 }
 .card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 8px 32px rgba(0,0,0,0.10), 0 2px 8px rgba(0,0,0,0.06);
-  border-color: rgba(27,169,222,0.2);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.12), 0 0 0 1px rgba(27,169,222,0.12);
+  border-color: rgba(27,169,222,0.25);
 }
+.card:hover::before { transform: scaleX(1); }
 .card-icon { font-size: 40px; margin-bottom: 18px; }
 
 /* ---- Glass cards (dark bg) ---- */
@@ -233,10 +251,18 @@ img { max-width: 100%; display: block; }
   background: rgba(255,255,255,0.05);
   border: 1px solid rgba(255,255,255,0.1);
   border-radius: 18px; padding: 28px;
-  backdrop-filter: blur(8px);
-  transition: all 0.3s;
+  backdrop-filter: blur(12px);
+  transition: all 0.3s cubic-bezier(0.34,1.2,0.64,1);
+  position: relative;
 }
-.glass-card:hover { background: rgba(255,255,255,0.09); border-color: rgba(27,169,222,0.35); }
+.glass-card::after {
+  content: ""; position: absolute; inset: -1px;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(27,169,222,0.25) 0%, rgba(139,92,246,0.15) 100%);
+  opacity: 0; transition: opacity 0.3s; z-index: -1;
+}
+.glass-card:hover { background: rgba(255,255,255,0.09); border-color: rgba(27,169,222,0.4); transform: translateY(-3px); }
+.glass-card:hover::after { opacity: 1; }
 
 /* ---- Steps ---- */
 .step-num {
@@ -415,6 +441,86 @@ img { max-width: 100%; display: block; }
 .fu2 { transition-delay: 0.12s; }
 .fu3 { transition-delay: 0.24s; }
 .fu.visible, .fu2.visible, .fu3.visible { opacity: 1; transform: translateY(0); }
+
+/* ---- Hero Word Reveal ---- */
+.hero-headline-words { display: block; }
+.word-reveal {
+  display: inline-block;
+  opacity: 0; transform: translateY(20px);
+  animation: wordReveal 0.6s cubic-bezier(0.34,1.4,0.64,1) forwards;
+}
+.word-reveal:nth-child(1) { animation-delay: 0.1s; }
+.word-reveal:nth-child(2) { animation-delay: 0.28s; }
+.word-reveal:nth-child(3) { animation-delay: 0.46s; }
+.word-reveal:nth-child(4) { animation-delay: 0.64s; }
+.word-reveal:nth-child(5) { animation-delay: 0.82s; }
+@keyframes wordReveal {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- Industry Ticker ---- */
+.industry-ticker {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 14px; font-weight: 600;
+  color: rgba(255,255,255,0.55);
+  margin-top: 20px; flex-wrap: wrap;
+}
+.industry-ticker-label { color: rgba(255,255,255,0.35); font-size: 12px; font-weight: 500; }
+.ticker-word {
+  position: relative; display: inline-block;
+  color: var(--primary);
+  overflow: hidden; height: 1.4em; vertical-align: top;
+}
+.ticker-inner {
+  display: flex; flex-direction: column;
+  animation: tickerScroll 8s steps(1) infinite;
+}
+.ticker-inner span { height: 1.4em; display: flex; align-items: center; white-space: nowrap; }
+@keyframes tickerScroll {
+  0%   { transform: translateY(0); }
+  25%  { transform: translateY(-1.4em); }
+  50%  { transform: translateY(-2.8em); }
+  75%  { transform: translateY(-4.2em); }
+  100% { transform: translateY(0); }
+}
+
+/* ---- Violet accent sections (Trakkia / Tech) ---- */
+.violet-section {
+  background: linear-gradient(135deg, #0d0a1e 0%, #160d2e 50%, #0a0f1a 100%);
+}
+.violet-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(139,92,246,0.12); color: #a78bfa;
+  border: 1px solid rgba(139,92,246,0.25);
+  padding: 6px 16px; border-radius: 99px;
+  font-size: 13px; font-weight: 600; margin-bottom: 20px;
+}
+
+/* ---- Shimmer on customer tiles ---- */
+.customer-tile {
+  position: relative; overflow: hidden;
+}
+.customer-tile::after {
+  content: ""; position: absolute;
+  top: 0; left: -75%;
+  width: 50%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(27,169,222,0.15), transparent);
+  transform: skewX(-15deg);
+  transition: left 0.5s ease;
+  pointer-events: none;
+}
+.customer-tile:hover::after { left: 125%; }
+
+/* ---- Gradient border animation on btn-demo ---- */
+.btn-demo {
+  position: relative; overflow: hidden;
+}
+.btn-demo::before {
+  content: ""; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, transparent 50%);
+  opacity: 0; transition: opacity 0.25s;
+}
+.btn-demo:hover::before { opacity: 1; }
 
 /* ---- Tab Component ---- */
 .tab-btn { transition: all 0.2s; cursor: pointer; }
