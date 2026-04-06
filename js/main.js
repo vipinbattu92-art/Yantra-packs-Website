@@ -86,4 +86,55 @@ document.addEventListener('DOMContentLoaded', function() {
       if (el) { e.preventDefault(); el.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     });
   });
+
+  // Contact form handler
+  // TODO: Replace the fetch URL below with your actual form endpoint.
+  // Options: Formspree (https://formspree.io), EmailJS, or your own backend API.
+  var contactForm = document.getElementById('contact-form');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var btn = document.getElementById('submit-btn');
+      var msg = document.getElementById('form-message');
+      var endpoint = contactForm.getAttribute('action') || '';
+
+      // Collect form data
+      var data = new FormData(contactForm);
+
+      if (!endpoint) {
+        // No endpoint configured yet — show a clear placeholder message
+        msg.className = 'form-message error';
+        msg.textContent = '⚠️ Form endpoint not configured. Please set the action attribute on the form or wire up a backend. (Contact: sales@yantrapacks.com)';
+        return;
+      }
+
+      btn.disabled = true;
+      btn.textContent = 'Sending…';
+      msg.className = 'form-message';
+      msg.textContent = '';
+
+      fetch(endpoint, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      })
+      .then(function(res) {
+        if (res.ok) {
+          msg.className = 'form-message success';
+          msg.textContent = '✅ Thank you! We\'ll be in touch within 4 business hours.';
+          contactForm.reset();
+        } else {
+          throw new Error('Server error');
+        }
+      })
+      .catch(function() {
+        msg.className = 'form-message error';
+        msg.textContent = '❌ Something went wrong. Please email us directly at sales@yantrapacks.com';
+      })
+      .finally(function() {
+        btn.disabled = false;
+        btn.textContent = 'Request a Demo →';
+      });
+    });
+  }
 });
