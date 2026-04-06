@@ -70,7 +70,7 @@ img { max-width: 100%; display: block; }
   background: rgba(255,255,255,0.96);
   backdrop-filter: blur(16px) saturate(180%);
   border-bottom: 1px solid rgba(0,0,0,0.06);
-  height: 68px; transition: box-shadow 0.3s;
+  height: 76px; transition: box-shadow 0.3s;
 }
 .navbar.scrolled { box-shadow: 0 4px 32px rgba(0,0,0,0.08); }
 .navbar .container { height: 100%; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
@@ -99,7 +99,7 @@ img { max-width: 100%; display: block; }
 .hamburger { display: none; background: none; border: none; cursor: pointer; padding: 6px; border-radius: 8px; }
 .hamburger:hover { background: var(--bg-light); }
 .mobile-menu {
-  display: none; position: absolute; top: 68px; left: 0; width: 100%;
+  display: none; position: absolute; top: 76px; left: 0; width: 100%;
   background: #fff; border-top: 1px solid var(--border);
   padding: 16px 24px 24px; box-shadow: 0 16px 48px rgba(0,0,0,0.12);
 }
@@ -152,7 +152,7 @@ img { max-width: 100%; display: block; }
 .hero {
   position: relative; min-height: 100vh;
   display: flex; align-items: center;
-  padding-top: 68px; overflow: hidden;
+  padding-top: 76px; overflow: hidden;
   background: var(--navy);
 }
 .hero::before {
@@ -567,14 +567,27 @@ table th, table td { vertical-align: middle; }
    ============================================================ */
 
 /* ---- Real Logo in Navbar ---- */
+/* Logo PNG has ~45% whitespace padding around the mark.
+   We render it large and use negative margins to visually crop the whitespace,
+   making the visible mark ~2.5× larger without re-exporting the image. */
+.nav-logo { overflow: visible; }
 .nav-logo-img {
-  height: 52px;
+  height: 150px;
   width: auto;
   display: block;
   object-fit: contain;
+  max-width: none;
+  margin-top: -35px;
+  margin-bottom: -35px;
+  margin-right: -30px;
 }
 @media (max-width: 768px) {
-  .nav-logo-img { height: 42px; }
+  .nav-logo-img {
+    height: 120px;
+    margin-top: -28px;
+    margin-bottom: -28px;
+    margin-right: -22px;
+  }
 }
 
 /* ---- Product Image Wrap (zoom on hover) ---- */
