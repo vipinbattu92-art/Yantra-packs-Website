@@ -25,34 +25,45 @@ document.addEventListener('DOMContentLoaded', function() {
   }, { threshold: 0.1 });
   document.querySelectorAll('.fu, .fu2, .fu3').forEach(function(el) { obs.observe(el); });
 
-  // Industry carousel
+  // Industry carousel — infinite loop via card cloning
   var indTrack = document.getElementById('ind-track');
   if (indTrack) {
-    var indCurrent = 0;
-    var indCards = indTrack.querySelectorAll('.ind-card');
-    var indTotal = indCards.length;
     var indDots = document.querySelectorAll('.ind-dot');
     var indPrev = document.getElementById('ind-prev');
     var indNext = document.getElementById('ind-next');
-    function indGoTo(idx) {
-      indCurrent = Math.max(0, Math.min(idx, indTotal - 1));
-      var cardW = indCards[0].offsetWidth + 20;
-      indTrack.style.transform = 'translateX(-' + (indCurrent * cardW) + 'px)';
-      indDots.forEach(function(d, i) { d.classList.toggle('active', i === indCurrent); });
-      if (indPrev) indPrev.disabled = indCurrent === 0;
-      if (indNext) indNext.disabled = indCurrent === indTotal - 1;
+    // Clone all original cards and append for seamless loop
+    var origCards = Array.from(indTrack.querySelectorAll('.ind-card'));
+    var indTotal = origCards.length;
+    origCards.forEach(function(c) { indTrack.appendChild(c.cloneNode(true)); });
+    var indCurrent = 0;
+    function indCardW() { return indTrack.querySelector('.ind-card').offsetWidth + 20; }
+    function indSetDot(idx) {
+      var dot = ((idx % indTotal) + indTotal) % indTotal;
+      indDots.forEach(function(d, i) { d.classList.toggle('active', i === dot); });
     }
-    if (indPrev) indPrev.addEventListener('click', function() { indGoTo(indCurrent - 1); });
-    if (indNext) indNext.addEventListener('click', function() { indGoTo(indCurrent + 1); });
-    indDots.forEach(function(d, i) { d.addEventListener('click', function() { indGoTo(i); }); });
-    // Touch/swipe support
+    function indGoTo(idx, animate) {
+      if (animate === false) indTrack.style.transition = 'none';
+      else indTrack.style.transition = 'transform 0.45s cubic-bezier(0.25,0.46,0.45,0.94)';
+      indCurrent = idx;
+      indTrack.style.transform = 'translateX(-' + (indCurrent * indCardW()) + 'px)';
+      indSetDot(indCurrent);
+    }
+    // After transition ends, silently reset if we've entered the cloned zone
+    indTrack.addEventListener('transitionend', function() {
+      if (indCurrent >= indTotal) indGoTo(indCurrent - indTotal, false);
+      if (indCurrent < 0)        indGoTo(indCurrent + indTotal, false);
+    });
+    if (indPrev) indPrev.addEventListener('click', function() { indGoTo(indCurrent - 1, true); });
+    if (indNext) indNext.addEventListener('click', function() { indGoTo(indCurrent + 1, true); });
+    indDots.forEach(function(d, i) { d.addEventListener('click', function() { indGoTo(i, true); }); });
+    // Touch/swipe
     var indStartX = 0;
     indTrack.addEventListener('touchstart', function(e) { indStartX = e.touches[0].clientX; }, { passive: true });
     indTrack.addEventListener('touchend', function(e) {
       var diff = indStartX - e.changedTouches[0].clientX;
-      if (Math.abs(diff) > 40) indGoTo(diff > 0 ? indCurrent + 1 : indCurrent - 1);
+      if (Math.abs(diff) > 40) indGoTo(indCurrent + (diff > 0 ? 1 : -1), true);
     });
-    indGoTo(0);
+    indGoTo(0, false);
   }
 
   // Dashboard col on desktop
