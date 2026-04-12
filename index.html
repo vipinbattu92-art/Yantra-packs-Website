@@ -13,7 +13,9 @@
 <meta property="og:type" content="website">
 <meta name="robots" content="index, follow">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Yantra Packs","legalName":"Yantraksh Logistics Private Limited","url":"https://www.yantrapacks.com","description":"India's leading returnable packaging pooling company offering reusable crates, boxes, stillage and Trakkia RFID tracking.","foundingDate":"2020","founders":[{"@type":"Person","name":"Karan Saharan"},{"@type":"Person","name":"Vipin Battu"}],"address":{"@type":"PostalAddress","streetAddress":"B-13/14, Institutional Area, Sector 32","addressLocality":"Gurugram","addressRegion":"Haryana","postalCode":"122001","addressCountry":"IN"},"telephone":"+919958322477","email":"sales@yantrapacks.com"}</script>
-<link rel="icon" href="images/favicon-mark.png" type="image/png">
+<link rel="shortcut icon" href="favicon.ico">
+<link rel="icon" href="images/favicon-mark.png" type="image/png" sizes="32x32">
+<link rel="icon" href="images/favicon.svg" type="image/svg+xml">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
@@ -207,11 +209,6 @@
         <div>OEM Plant</div>
       </div>
       <div class="sc-arrow">→</div>
-      <div class="sc-node">
-        <div style="font-size:20px;margin-bottom:4px;">🔄</div>
-        <div>Return &amp; Reuse</div>
-      </div>
-      <div class="sc-arrow">→</div>
       <div class="sc-node" style="background:rgba(27,169,222,0.12);border-color:rgba(27,169,222,0.4);color:#1BA9DE;">
         <div style="font-size:20px;margin-bottom:4px;">♻️</div>
         <div>Yantra Pool &amp; Redeploy</div>
@@ -401,20 +398,68 @@
 </section>
 
 <!-- INDUSTRIES -->
-<section class="section" style="background:#fff;">
+<section class="section ind-section">
   <div class="container">
-    <div class="section-header text-center fu">
-      <h2 class="section-title">Industries We Serve</h2>
-      <p class="section-sub" style="margin:0 auto;">From automotive Tier-1 clusters to pharma cold-chain — we're already running in your industry.</p>
+    <div class="section-header fu">
+      <h2 class="section-title" style="color:#fff;">Industries We Serve</h2>
+      <p class="section-sub" style="color:rgba(255,255,255,0.55);">From automotive Tier-1 clusters to pharma cold-chain — already running in your industry.</p>
     </div>
-    <div class="grid-6">
-      <a href="industries.html" class="industry-tile fu"><div class="icon">🚗</div><span>Automotive</span></a>
-      <a href="industries.html" class="industry-tile fu2"><div class="icon">🛒</div><span>FMCG</span></a>
-      <a href="industries.html" class="industry-tile fu2"><div class="icon">💊</div><span>Pharma</span></a>
-      <a href="industries.html" class="industry-tile fu3"><div class="icon">📦</div><span>E-Commerce</span></a>
-      <a href="industries.html" class="industry-tile fu3"><div class="icon">⚙️</div><span>Engineering</span></a>
-      <a href="industries.html" class="industry-tile fu3"><div class="icon">🧪</div><span>Chemicals</span></a>
+  </div>
+  <div class="ind-carousel-wrap">
+    <div class="ind-track" id="ind-track">
+      <!-- Automotive -->
+      <a href="industries.html" class="ind-card ind-auto">
+        <div class="ind-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M17 17a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M5 17H3v-4l2-5h14l2 5v4h-2M5 17h12M9 8l-1.5 4h9L15 8H9Z"/></svg></div>
+        <div class="ind-name">Automotive</div>
+        <div class="ind-tagline">JIT supply chains · Tier-1 & Tier-2 clusters · Gate-level RFID tracking</div>
+        <div class="ind-cta">Explore →</div>
+      </a>
+      <!-- FMCG -->
+      <a href="industries.html" class="ind-card ind-fmcg">
+        <div class="ind-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9h18M3 9V6a1 1 0 0 1 1-1h16a1 1 0 0 1 1 1v3M3 9v10a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1V9M9 14h6"/><path d="M12 11v6"/></svg></div>
+        <div class="ind-name">FMCG</div>
+        <div class="ind-tagline">Pan-India distribution · Multi-tier recovery · 98%+ return rates</div>
+        <div class="ind-cta">Explore →</div>
+      </a>
+      <!-- Pharma -->
+      <a href="industries.html" class="ind-card ind-pharm">
+        <div class="ind-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10.5 20H4a2 2 0 0 1-2-2V5c0-1.1.9-2 2-2h3.93a2 2 0 0 1 1.66.9l.82 1.2a2 2 0 0 0 1.66.9H20a2 2 0 0 1 2 2v2"/><circle cx="17" cy="17" r="4"/><path d="M17 15v4M15 17h4"/></svg></div>
+        <div class="ind-name">Pharma</div>
+        <div class="ind-tagline">Cold chain · Sterile closed loops · Full custody chain via Trakkia</div>
+        <div class="ind-cta">Explore →</div>
+      </a>
+      <!-- E-Commerce -->
+      <a href="industries.html" class="ind-card ind-ecom">
+        <div class="ind-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><polyline points="3.27 6.96 12 12.01 20.73 6.96"/><line x1="12" y1="22.08" x2="12" y2="12"/></svg></div>
+        <div class="ind-name">E-Commerce</div>
+        <div class="ind-tagline">Fulfillment centres · Reverse logistics · Branded reusable totes</div>
+        <div class="ind-cta">Explore →</div>
+      </a>
+      <!-- Engineering -->
+      <a href="industries.html" class="ind-card ind-eng">
+        <div class="ind-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20a8 8 0 1 0 0-16 8 8 0 0 0 0 16Z"/><path d="M12 14a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg></div>
+        <div class="ind-name">Engineering</div>
+        <div class="ind-tagline">Heavy components · Metal stillage & trolleys · Static Hire model</div>
+        <div class="ind-cta">Explore →</div>
+      </a>
+      <!-- Chemicals -->
+      <a href="industries.html" class="ind-card ind-chem">
+        <div class="ind-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6M9 3v7l-5 8a1 1 0 0 0 .9 1.5h14.2a1 1 0 0 0 .9-1.5L15 10V3"/><path d="M7.5 16h9"/></svg></div>
+        <div class="ind-name">Chemicals</div>
+        <div class="ind-tagline">HAZCHEM compliance · Leak-proof containers · Hazmat chain-of-custody</div>
+        <div class="ind-cta">Explore →</div>
+      </a>
     </div>
+    <button class="ind-arrow ind-prev" id="ind-prev" aria-label="Previous">&#8249;</button>
+    <button class="ind-arrow ind-next" id="ind-next" aria-label="Next">&#8250;</button>
+  </div>
+  <div class="ind-dots" id="ind-dots">
+    <span class="ind-dot active"></span>
+    <span class="ind-dot"></span>
+    <span class="ind-dot"></span>
+    <span class="ind-dot"></span>
+    <span class="ind-dot"></span>
+    <span class="ind-dot"></span>
   </div>
 </section>
 

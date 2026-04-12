@@ -25,6 +25,36 @@ document.addEventListener('DOMContentLoaded', function() {
   }, { threshold: 0.1 });
   document.querySelectorAll('.fu, .fu2, .fu3').forEach(function(el) { obs.observe(el); });
 
+  // Industry carousel
+  var indTrack = document.getElementById('ind-track');
+  if (indTrack) {
+    var indCurrent = 0;
+    var indCards = indTrack.querySelectorAll('.ind-card');
+    var indTotal = indCards.length;
+    var indDots = document.querySelectorAll('.ind-dot');
+    var indPrev = document.getElementById('ind-prev');
+    var indNext = document.getElementById('ind-next');
+    function indGoTo(idx) {
+      indCurrent = Math.max(0, Math.min(idx, indTotal - 1));
+      var cardW = indCards[0].offsetWidth + 20;
+      indTrack.style.transform = 'translateX(-' + (indCurrent * cardW) + 'px)';
+      indDots.forEach(function(d, i) { d.classList.toggle('active', i === indCurrent); });
+      if (indPrev) indPrev.disabled = indCurrent === 0;
+      if (indNext) indNext.disabled = indCurrent === indTotal - 1;
+    }
+    if (indPrev) indPrev.addEventListener('click', function() { indGoTo(indCurrent - 1); });
+    if (indNext) indNext.addEventListener('click', function() { indGoTo(indCurrent + 1); });
+    indDots.forEach(function(d, i) { d.addEventListener('click', function() { indGoTo(i); }); });
+    // Touch/swipe support
+    var indStartX = 0;
+    indTrack.addEventListener('touchstart', function(e) { indStartX = e.touches[0].clientX; }, { passive: true });
+    indTrack.addEventListener('touchend', function(e) {
+      var diff = indStartX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > 40) indGoTo(diff > 0 ? indCurrent + 1 : indCurrent - 1);
+    });
+    indGoTo(0);
+  }
+
   // Dashboard col on desktop
   var dc = document.getElementById('dashboard-col');
   if (dc && window.innerWidth >= 768) dc.style.display = 'block';
