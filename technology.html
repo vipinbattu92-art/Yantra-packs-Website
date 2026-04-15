@@ -57,39 +57,40 @@
       <p class="section-sub" style="margin:0 auto;">Four integrated modules, one unified view of your returnable packaging assets.</p>
     </div>
     <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:32px;">
-      <button class="tab-btn active" data-tab="tagging" style="display:inline-flex;align-items:center;gap:7px;padding:10px 22px;border-radius:8px;border:2px solid #1BA9DE;background:#1BA9DE;color:#fff;font-weight:600;font-size:14px;cursor:pointer;">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
-        Asset Tagging &amp; Serial to IoT Mapping
+      <button class="tab-btn active" data-tab="app" style="display:inline-flex;align-items:center;gap:7px;padding:10px 22px;border-radius:8px;border:2px solid #1BA9DE;background:#1BA9DE;color:#fff;font-weight:600;font-size:14px;cursor:pointer;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><rect x="14" y="6" width="4" height="7" rx="1"/></svg>
+        Web &amp; Mobile App
       </button>
       <button class="tab-btn" data-tab="readers" style="display:inline-flex;align-items:center;gap:7px;padding:10px 22px;border-radius:8px;border:2px solid #e5e7eb;background:#fff;color:#374151;font-weight:600;font-size:14px;cursor:pointer;">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="3" width="7" height="18" rx="1"/><path d="M9 7h6M9 12h6M9 17h6"/><rect x="15" y="8" width="7" height="8" rx="1"/></svg>
         Handheld &amp; Fixed Reader Integrations
       </button>
+      <button class="tab-btn" data-tab="tagging" style="display:inline-flex;align-items:center;gap:7px;padding:10px 22px;border-radius:8px;border:2px solid #e5e7eb;background:#fff;color:#374151;font-weight:600;font-size:14px;cursor:pointer;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+        Asset Tagging &amp; Serial to IoT Mapping
+      </button>
       <button class="tab-btn" data-tab="triggers" style="display:inline-flex;align-items:center;gap:7px;padding:10px 22px;border-radius:8px;border:2px solid #e5e7eb;background:#fff;color:#374151;font-weight:600;font-size:14px;cursor:pointer;">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
         Trigger Based Workflows
       </button>
-      <button class="tab-btn" data-tab="app" style="display:inline-flex;align-items:center;gap:7px;padding:10px 22px;border-radius:8px;border:2px solid #e5e7eb;background:#fff;color:#374151;font-weight:600;font-size:14px;cursor:pointer;">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><rect x="14" y="6" width="4" height="7" rx="1"/></svg>
-        Web &amp; Mobile App
-      </button>
     </div>
 
-    <!-- Tab 1: Asset Tagging & Serial to IoT Mapping -->
-    <div id="tab-tagging" class="tab-panel active">
+    <!-- Tab 1: Web & Mobile App -->
+    <div id="tab-app" class="tab-panel active">
       <div class="grid-2" style="align-items:center;gap:48px;">
         <div>
-          <h3 style="font-size:24px;font-weight:800;color:#0D2B45;margin-bottom:16px;">Asset Tagging &amp; Serial to IoT Mapping</h3>
-          <p style="color:#6b7280;margin-bottom:16px;line-height:1.7;">Every asset in the Yantra Packs pool receives a unique RFID or barcode tag at manufacture. That serial number is mapped in Trakkia, creating a permanent digital twin in the cloud — so every crate, stillage, and tote has a live identity from day one.</p>
+          <h3 style="font-size:24px;font-weight:800;color:#0D2B45;margin-bottom:16px;">Web &amp; Mobile App</h3>
+          <p style="color:#6b7280;margin-bottom:16px;line-height:1.7;">Trakkia is available as a full web dashboard and a native mobile app for iOS and Android. Your supply chain team sees live asset location, recovery rates, overdue alerts, and ESG reports from any device — in the office or on the floor.</p>
           <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
-            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Unique tag-per-asset — RFID UHF or QR/barcode</li>
-            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Serial mapped to IoT cloud at point of manufacture</li>
-            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Grade, condition, and trip-count tracked from first scan</li>
-            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Full asset provenance — custody chain across every location</li>
+            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Web dashboard — live tracking, reports, and alerts</li>
+            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>iOS &amp; Android app for on-the-go scanning and monitoring</li>
+            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Role-based access — OEM, vendor, and logistics views</li>
+            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Exportable BRSR/GRI Scope 3 carbon reports, daily</li>
           </ul>
+          <a href="https://app.trakkia.com" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;margin-top:20px;background:#1BA9DE;color:#fff;padding:11px 24px;border-radius:10px;font-weight:700;font-size:14px;">Login to Trakkia →</a>
         </div>
         <div style="border-radius:16px;overflow:hidden;border:1px solid #e5e7eb;box-shadow:0 4px 24px rgba(0,0,0,0.07);">
-          <img src="images/tech-asset-tagging.png" alt="Asset Tagging and Serial to IoT Mapping" style="width:100%;display:block;" loading="eager">
+          <img src="images/tech-web-mobile.png" alt="Trakkia Web and Mobile App" style="width:100%;height:360px;object-fit:cover;object-position:center;display:block;" loading="eager">
         </div>
       </div>
     </div>
@@ -108,12 +109,31 @@
           </ul>
         </div>
         <div style="border-radius:16px;overflow:hidden;border:1px solid #e5e7eb;box-shadow:0 4px 24px rgba(0,0,0,0.07);">
-          <img src="images/tech-handheld-reader.png" alt="Handheld and Fixed Reader Integrations" style="width:100%;display:block;" loading="lazy">
+          <img src="images/tech-handheld-reader.png" alt="Handheld and Fixed Reader Integrations" style="width:100%;height:360px;object-fit:cover;object-position:center;display:block;" loading="lazy">
         </div>
       </div>
     </div>
 
-    <!-- Tab 3: Trigger Based Workflows -->
+    <!-- Tab 3: Asset Tagging & Serial to IoT Mapping -->
+    <div id="tab-tagging" class="tab-panel">
+      <div class="grid-2" style="align-items:center;gap:48px;">
+        <div>
+          <h3 style="font-size:24px;font-weight:800;color:#0D2B45;margin-bottom:16px;">Asset Tagging &amp; Serial to IoT Mapping</h3>
+          <p style="color:#6b7280;margin-bottom:16px;line-height:1.7;">Every asset in the Yantra Packs pool receives a unique RFID or barcode tag at manufacture. That serial number is mapped in Trakkia, creating a permanent digital twin in the cloud — so every crate, stillage, and tote has a live identity from day one.</p>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Unique tag-per-asset — RFID UHF or QR/barcode</li>
+            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Serial mapped to IoT cloud at point of manufacture</li>
+            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Grade, condition, and trip-count tracked from first scan</li>
+            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Full asset provenance — custody chain across every location</li>
+          </ul>
+        </div>
+        <div style="border-radius:16px;overflow:hidden;border:1px solid #e5e7eb;box-shadow:0 4px 24px rgba(0,0,0,0.07);">
+          <img src="images/tech-asset-tagging.png" alt="Asset Tagging and Serial to IoT Mapping" style="width:100%;height:360px;object-fit:cover;object-position:center;display:block;" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <!-- Tab 4: Trigger Based Workflows -->
     <div id="tab-triggers" class="tab-panel">
       <div class="grid-2" style="align-items:center;gap:48px;">
         <div>
@@ -127,27 +147,7 @@
           </ul>
         </div>
         <div style="border-radius:16px;overflow:hidden;border:1px solid #e5e7eb;box-shadow:0 4px 24px rgba(0,0,0,0.07);">
-          <img src="images/tech-trigger-workflows.png" alt="Trigger Based Workflows" style="width:100%;display:block;" loading="lazy">
-        </div>
-      </div>
-    </div>
-
-    <!-- Tab 4: Web & Mobile App -->
-    <div id="tab-app" class="tab-panel">
-      <div class="grid-2" style="align-items:center;gap:48px;">
-        <div>
-          <h3 style="font-size:24px;font-weight:800;color:#0D2B45;margin-bottom:16px;">Web &amp; Mobile App</h3>
-          <p style="color:#6b7280;margin-bottom:16px;line-height:1.7;">Trakkia is available as a full web dashboard and a native mobile app for iOS and Android. Your supply chain team sees live asset location, recovery rates, overdue alerts, and ESG reports from any device — in the office or on the floor.</p>
-          <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
-            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Web dashboard — live tracking, reports, and alerts</li>
-            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>iOS &amp; Android app for on-the-go scanning and monitoring</li>
-            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Role-based access — OEM, vendor, and logistics views</li>
-            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Exportable BRSR/GRI Scope 3 carbon reports, daily</li>
-          </ul>
-          <a href="https://app.trakkia.com" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;margin-top:20px;background:#1BA9DE;color:#fff;padding:11px 24px;border-radius:10px;font-weight:700;font-size:14px;">Login to Trakkia →</a>
-        </div>
-        <div style="border-radius:16px;overflow:hidden;border:1px solid #e5e7eb;box-shadow:0 4px 24px rgba(0,0,0,0.07);">
-          <img src="images/tech-web-mobile.png" alt="Trakkia Web and Mobile App" style="width:100%;display:block;" loading="lazy">
+          <img src="images/tech-trigger-workflows.png" alt="Trigger Based Workflows" style="width:100%;height:360px;object-fit:cover;object-position:center;display:block;" loading="lazy">
         </div>
       </div>
     </div>
