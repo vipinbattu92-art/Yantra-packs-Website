@@ -150,7 +150,7 @@ img { max-width: 100%; display: block; }
 
 /* ---- Hero ---- */
 .hero {
-  position: relative; min-height: calc(100vh - 80px);
+  position: relative; height: calc(100vh - 156px); min-height: 500px;
   display: flex; align-items: center;
   padding-top: 60px; overflow: hidden;
   background: var(--navy);
@@ -276,17 +276,18 @@ img { max-width: 100%; display: block; }
   margin: 0 auto 22px;
 }
 
-/* ---- Feature tiles (navy bg) ---- */
+/* ---- Feature tiles (light bg) ---- */
 .feature-tile {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
+  background: #fff;
+  border: 1px solid #e2e8f0;
   border-radius: 18px; padding: 28px; text-align: center;
   transition: all 0.3s;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
 }
-.feature-tile:hover { background: rgba(255,255,255,0.09); border-color: rgba(27,169,222,0.4); transform: translateY(-3px); }
+.feature-tile:hover { background: #eff8ff; border-color: rgba(27,169,222,0.4); transform: translateY(-3px); box-shadow: 0 8px 28px rgba(27,169,222,0.12); }
 .feature-tile .icon { font-size: 36px; margin-bottom: 14px; }
-.feature-tile h3 { color: #fff; font-weight: 700; margin-bottom: 10px; font-size: 16px; }
-.feature-tile p { color: rgba(147,197,253,0.75); font-size: 13px; line-height: 1.65; }
+.feature-tile h3 { color: #0D2B45; font-weight: 700; margin-bottom: 10px; font-size: 16px; }
+.feature-tile p { color: #6b7280; font-size: 13px; line-height: 1.65; }
 
 /* ---- Impact band ---- */
 .impact-band { background: linear-gradient(135deg, var(--navy) 0%, #1a4a6e 50%, var(--primary) 100%); padding: 72px 0; }
