@@ -174,7 +174,7 @@ img { max-width: 100%; display: block; }
   background: rgba(27,169,222,0.15); color: var(--primary);
   border: 1px solid rgba(27,169,222,0.3);
   padding: 8px 20px; border-radius: 99px;
-  font-size: 13px; font-weight: 600; margin-bottom: 28px;
+  font-size: 13px; font-weight: 600; margin-top: 24px; margin-bottom: 28px;
 }
 .hero h1 {
   font-size: clamp(40px,5.5vw,68px); font-weight: 900;
