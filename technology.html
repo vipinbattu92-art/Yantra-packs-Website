@@ -57,89 +57,101 @@
       <p class="section-sub" style="margin:0 auto;">Four integrated modules, one unified view of your returnable packaging assets.</p>
     </div>
     <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:32px;">
-      <button class="tab-btn" data-tab="rfid" style="display:inline-flex;align-items:center;gap:7px;padding:10px 22px;border-radius:8px;border:2px solid #1BA9DE;background:#1BA9DE;color:#fff;font-weight:600;font-size:14px;cursor:pointer;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M1.5 8.5a13 13 0 0 1 21 0"/><path d="M5 12a9 9 0 0 1 14 0"/><path d="M8.5 15.5a5 5 0 0 1 7 0"/><circle cx="12" cy="19" r="1" fill="currentColor"/></svg>RFID Tracking</button>
-      <button class="tab-btn" data-tab="barcode" style="display:inline-flex;align-items:center;gap:7px;padding:10px 22px;border-radius:8px;border:2px solid #e5e7eb;background:#fff;color:#374151;font-weight:600;font-size:14px;cursor:pointer;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="2" width="20" height="20" rx="2"/><path d="M7 7v10M10 7v10M13 7v10M17 7v5"/><path d="M17 16v1"/></svg>Barcode + AIDC</button>
-      <button class="tab-btn" data-tab="lifecycle" style="display:inline-flex;align-items:center;gap:7px;padding:10px 22px;border-radius:8px;border:2px solid #e5e7eb;background:#fff;color:#374151;font-weight:600;font-size:14px;cursor:pointer;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="23 4 23 10 17 10"/><path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"/></svg>Asset Lifecycle</button>
-      <button class="tab-btn" data-tab="dashboard" style="display:inline-flex;align-items:center;gap:7px;padding:10px 22px;border-radius:8px;border:2px solid #e5e7eb;background:#fff;color:#374151;font-weight:600;font-size:14px;cursor:pointer;"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><polyline points="7 8 10 11 13 9 17 13"/></svg>Live Dashboard</button>
+      <button class="tab-btn active" data-tab="tagging" style="display:inline-flex;align-items:center;gap:7px;padding:10px 22px;border-radius:8px;border:2px solid #1BA9DE;background:#1BA9DE;color:#fff;font-weight:600;font-size:14px;cursor:pointer;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"/><line x1="7" y1="7" x2="7.01" y2="7"/></svg>
+        Asset Tagging &amp; Serial to IoT Mapping
+      </button>
+      <button class="tab-btn" data-tab="readers" style="display:inline-flex;align-items:center;gap:7px;padding:10px 22px;border-radius:8px;border:2px solid #e5e7eb;background:#fff;color:#374151;font-weight:600;font-size:14px;cursor:pointer;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="3" width="7" height="18" rx="1"/><path d="M9 7h6M9 12h6M9 17h6"/><rect x="15" y="8" width="7" height="8" rx="1"/></svg>
+        Handheld &amp; Fixed Reader Integrations
+      </button>
+      <button class="tab-btn" data-tab="triggers" style="display:inline-flex;align-items:center;gap:7px;padding:10px 22px;border-radius:8px;border:2px solid #e5e7eb;background:#fff;color:#374151;font-weight:600;font-size:14px;cursor:pointer;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        Trigger Based Workflows
+      </button>
+      <button class="tab-btn" data-tab="app" style="display:inline-flex;align-items:center;gap:7px;padding:10px 22px;border-radius:8px;border:2px solid #e5e7eb;background:#fff;color:#374151;font-weight:600;font-size:14px;cursor:pointer;">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><rect x="14" y="6" width="4" height="7" rx="1"/></svg>
+        Web &amp; Mobile App
+      </button>
     </div>
-    <div id="tab-rfid" class="tab-panel active">
+
+    <!-- Tab 1: Asset Tagging & Serial to IoT Mapping -->
+    <div id="tab-tagging" class="tab-panel active">
       <div class="grid-2" style="align-items:center;gap:48px;">
         <div>
-          <h3 style="font-size:24px;font-weight:800;color:#0D2B45;margin-bottom:16px;">RFID Tracking — Real-Time Location of Every Asset</h3>
-          <p style="color:#6b7280;margin-bottom:16px;line-height:1.7;">Every returnable packaging asset in the Yantra pool is fitted with an RFID tag. Gate readers at your facility scan automatically — no manual scanning, no human error. Know exactly where every crate, stillage, and tote is at any moment.</p>
+          <h3 style="font-size:24px;font-weight:800;color:#0D2B45;margin-bottom:16px;">Asset Tagging &amp; Serial to IoT Mapping</h3>
+          <p style="color:#6b7280;margin-bottom:16px;line-height:1.7;">Every asset in the Yantra Packs pool receives a unique RFID or barcode tag at manufacture. That serial number is mapped in Trakkia, creating a permanent digital twin in the cloud — so every crate, stillage, and tote has a live identity from day one.</p>
           <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
-            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Automatic gate-level scanning — no manual intervention</li>
-            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Works across supplier, OEM, and Tier-2 locations</li>
-            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Automated allotment and de-hire records</li>
-            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Overdue alerts sent automatically via dashboard</li>
-          </ul>
-        </div>
-        <div class="dashboard-mock">
-          <div class="dash-header"><span class="dash-logo">TRAKKIA · RFID</span><span class="dash-live"><span class="dash-dot"></span>Live</span></div>
-          <div class="dash-cards">
-            <div class="dash-card"><div class="dval blue">4,821</div><div class="dlbl">Tags Active</div></div>
-            <div class="dash-card"><div class="dval green">99.2%</div><div class="dlbl">Read Rate</div></div>
-            <div class="dash-card"><div class="dval blue">0</div><div class="dlbl">Unread Today</div></div>
-          </div>
-          <div class="dash-events">
-            <div class="dash-event"><span class="dash-dot-sm" style="background:#4ade80"></span><span class="dash-event-text">Gate IN: 48 crates — Manesar Plant</span><span class="dash-event-time">Just now</span></div>
-            <div class="dash-event"><span class="dash-dot-sm" style="background:#1BA9DE"></span><span class="dash-event-text">Gate OUT: 32 FLCs — Chennai Supplier</span><span class="dash-event-time">4m ago</span></div>
-            <div class="dash-event"><span class="dash-dot-sm" style="background:#facc15"></span><span class="dash-event-text">Overdue: 12 totes — Pune site</span><span class="dash-event-time">1h ago</span></div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div id="tab-barcode" class="tab-panel">
-      <div class="grid-2" style="align-items:center;gap:48px;">
-        <div>
-          <h3 style="font-size:24px;font-weight:800;color:#0D2B45;margin-bottom:16px;">Barcode + AIDC — Works With What You Have</h3>
-          <p style="color:#6b7280;margin-bottom:16px;line-height:1.7;">Not every facility has RFID infrastructure. Trakkia's AIDC module works with standard 1D/2D barcodes and QR codes — compatible with your existing handheld scanners, WMS systems, and mobile apps.</p>
-          <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
-            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>1D barcode, 2D QR, and Data Matrix support</li>
-            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Integrates with existing WMS via REST API</li>
-            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Mobile scanning via Trakkia app (iOS + Android)</li>
-            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Offline mode — syncs when connectivity is restored</li>
+            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Unique tag-per-asset — RFID UHF or QR/barcode</li>
+            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Serial mapped to IoT cloud at point of manufacture</li>
+            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Grade, condition, and trip-count tracked from first scan</li>
+            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Full asset provenance — custody chain across every location</li>
           </ul>
         </div>
         <div style="border-radius:16px;overflow:hidden;border:1px solid #e5e7eb;box-shadow:0 4px 24px rgba(0,0,0,0.07);">
-          <img src="images/tech-handheld-reader.jpg" alt="Handheld and Fixed Reader Integration" style="width:100%;display:block;" loading="lazy">
+          <img src="images/tech-asset-tagging.png" alt="Asset Tagging and Serial to IoT Mapping" style="width:100%;display:block;" loading="eager">
         </div>
       </div>
     </div>
-    <div id="tab-lifecycle" class="tab-panel">
+
+    <!-- Tab 2: Handheld & Fixed Reader Integrations -->
+    <div id="tab-readers" class="tab-panel">
       <div class="grid-2" style="align-items:center;gap:48px;">
         <div>
-          <h3 style="font-size:24px;font-weight:800;color:#0D2B45;margin-bottom:16px;">Asset Lifecycle — Full History, Every Asset</h3>
-          <p style="color:#6b7280;margin-bottom:16px;line-height:1.7;">Trakkia maintains a complete digital record for every asset — from manufacture and initial deployment through every trip, repair, and re-issue, all the way to retirement. Know the age, condition, and trip count of every item in your pool.</p>
+          <h3 style="font-size:24px;font-weight:800;color:#0D2B45;margin-bottom:16px;">Handheld &amp; Fixed Reader Integrations</h3>
+          <p style="color:#6b7280;margin-bottom:16px;line-height:1.7;">Trakkia works with the readers your teams already use. Fixed RFID gate readers at plant entry/exit scan assets automatically. Handheld scanners and mobile devices handle spot-checks and manual dispatch — all syncing to the same dashboard in real time.</p>
           <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
-            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Trip counter per asset (avg 200+ trips per lifecycle)</li>
-            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Maintenance and repair history logged</li>
-            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Grade-based asset classification (A/B/C condition)</li>
-            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Automatic retire/replace triggers on degradation</li>
+            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Fixed UHF RFID gate readers for automated gate-in/out</li>
+            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Compatible with Zebra, Honeywell, and standard handheld readers</li>
+            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>No new infrastructure needed — integrates with existing WMS</li>
+            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Offline mode on handhelds — syncs automatically on reconnect</li>
           </ul>
         </div>
         <div style="border-radius:16px;overflow:hidden;border:1px solid #e5e7eb;box-shadow:0 4px 24px rgba(0,0,0,0.07);">
-          <img src="images/tech-asset-tagging.jpg" alt="Asset Tagging, Serial to IoT Mapping and Trigger-Based Workflow" style="width:100%;display:block;" loading="lazy">
+          <img src="images/tech-handheld-reader.png" alt="Handheld and Fixed Reader Integrations" style="width:100%;display:block;" loading="lazy">
         </div>
       </div>
     </div>
-    <div id="tab-dashboard" class="tab-panel">
+
+    <!-- Tab 3: Trigger Based Workflows -->
+    <div id="tab-triggers" class="tab-panel">
       <div class="grid-2" style="align-items:center;gap:48px;">
         <div>
-          <h3 style="font-size:24px;font-weight:800;color:#0D2B45;margin-bottom:16px;">Live Dashboard — Decisions, Not Spreadsheets</h3>
-          <p style="color:#6b7280;margin-bottom:16px;line-height:1.7;">One dashboard shows you everything: recovery rates by site, overdue assets by location, cost savings vs single-use, and ESG carbon impact. No more chasing vendors for reports — it's live, always.</p>
+          <h3 style="font-size:24px;font-weight:800;color:#0D2B45;margin-bottom:16px;">Trigger Based Workflows</h3>
+          <p style="color:#6b7280;margin-bottom:16px;line-height:1.7;">Every scan event in Trakkia can fire an automated action — allotment records, de-hire entries, overdue alerts, maintenance flags. No manual follow-up, no missed returns. Your supply chain runs on rules, not reminders.</p>
           <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
-            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Recovery rate by location and client</li>
-            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Cost savings vs corrugated — updated daily</li>
-            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>BRSR/GRI-ready Scope 3 carbon reports</li>
-            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Exportable reports for management review</li>
+            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Gate-IN triggers automatic allotment to client location</li>
+            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Gate-OUT triggers de-hire and return confirmation records</li>
+            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Overdue threshold triggers auto-alerts to site and vendor</li>
+            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Trip-count threshold triggers maintenance and retire workflow</li>
           </ul>
         </div>
         <div style="border-radius:16px;overflow:hidden;border:1px solid #e5e7eb;box-shadow:0 4px 24px rgba(0,0,0,0.07);">
-          <img src="images/tech-web-mobile.jpg" alt="Trakkia Web and Mobile App" style="width:100%;display:block;" loading="lazy">
+          <img src="images/tech-trigger-workflows.png" alt="Trigger Based Workflows" style="width:100%;display:block;" loading="lazy">
         </div>
       </div>
     </div>
+
+    <!-- Tab 4: Web & Mobile App -->
+    <div id="tab-app" class="tab-panel">
+      <div class="grid-2" style="align-items:center;gap:48px;">
+        <div>
+          <h3 style="font-size:24px;font-weight:800;color:#0D2B45;margin-bottom:16px;">Web &amp; Mobile App</h3>
+          <p style="color:#6b7280;margin-bottom:16px;line-height:1.7;">Trakkia is available as a full web dashboard and a native mobile app for iOS and Android. Your supply chain team sees live asset location, recovery rates, overdue alerts, and ESG reports from any device — in the office or on the floor.</p>
+          <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Web dashboard — live tracking, reports, and alerts</li>
+            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>iOS &amp; Android app for on-the-go scanning and monitoring</li>
+            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Role-based access — OEM, vendor, and logistics views</li>
+            <li style="display:flex;gap:10px;color:#374151;font-size:14px;"><span style="color:#1BA9DE;font-weight:700;margin-top:1px;">✓</span>Exportable BRSR/GRI Scope 3 carbon reports, daily</li>
+          </ul>
+          <a href="https://app.trakkia.com" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:8px;margin-top:20px;background:#1BA9DE;color:#fff;padding:11px 24px;border-radius:10px;font-weight:700;font-size:14px;">Login to Trakkia →</a>
+        </div>
+        <div style="border-radius:16px;overflow:hidden;border:1px solid #e5e7eb;box-shadow:0 4px 24px rgba(0,0,0,0.07);">
+          <img src="images/tech-web-mobile.png" alt="Trakkia Web and Mobile App" style="width:100%;display:block;" loading="lazy">
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
