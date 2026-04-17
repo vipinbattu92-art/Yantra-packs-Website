@@ -316,6 +316,7 @@ img { max-width: 100%; display: block; }
 }
 .product-card:hover { transform: translateY(-4px); box-shadow: 0 12px 36px rgba(0,0,0,0.10); border-color: rgba(27,169,222,0.25); }
 .product-card .icon { font-size: 44px; margin-bottom: 14px; }
+.product-card img { width: 100%; height: 180px; object-fit: cover; border-radius: 12px; margin-bottom: 14px; display: block; }
 .product-badge { display: inline-flex; align-items: center; gap: 4px; background: rgba(27,169,222,0.1); color: var(--primary); font-size: 11px; font-weight: 700; padding: 4px 12px; border-radius: 99px; margin-bottom: 12px; }
 
 /* ---- Industry Tiles ---- */

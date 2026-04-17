@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 120" role="img" aria-label="Yantra Packs — Packing Intelligence">
+  <!-- YANTRA block -->
+  <rect x="0" y="0" width="198" height="72" rx="3" fill="#1BA9DE"/>
+  <text x="99" y="52" font-family="Arial Black, Arial, sans-serif" font-size="46" font-weight="900" fill="white" text-anchor="middle" letter-spacing="-1">YANTRA</text>
+  <!-- PACKS block (offset lower-right, overlapping) -->
+  <rect x="152" y="28" width="188" height="72" rx="3" fill="#7A7A7A"/>
+  <text x="246" y="80" font-family="Arial Black, Arial, sans-serif" font-size="46" font-weight="900" fill="white" text-anchor="middle" letter-spacing="-1">PACKS</text>
+  <!-- Tagline -->
+  <text x="0" y="112" font-family="Arial, sans-serif" font-size="15" font-weight="600" fill="#4a4a4a" letter-spacing="2.5">PACKING INTELLIGENCE</text>
+</svg>
