@@ -551,9 +551,151 @@ table th, table td { vertical-align: middle; }
   .hero-btns { flex-direction: column; }
   .btn-primary, .btn-outline-white { width: 100%; justify-content: center; }
   .testimonial { padding: 32px 24px; }
+  .hero-dashboard-col { display: none !important; }
+  .ind-tabs-body { grid-template-columns: 1fr; }
+  .ind-tab-img { height: 220px; }
+  .prod-scroll { gap: 16px; padding: 0 16px; }
+  .prod-scroll-card { min-width: 200px; }
 }
 @media (max-width: 480px) {
-  .hero-stats { grid-template-columns: 1fr; }
+  .hero-stats { grid-template-columns: repeat(2,1fr); }
   .grid-6 { grid-template-columns: repeat(2,1fr); }
   .container { padding: 0 16px; }
 }
+
+/* ── Hero Dashboard Column ──────────────────────────── */
+.hero-dashboard-col { display: none; }
+@media (min-width: 900px) { .hero-dashboard-col { display: block; } }
+
+/* ── Logo Marquee ───────────────────────────────────── */
+.logo-marquee-section { background: #fff; padding: 40px 0; border-bottom: 1px solid var(--border); }
+.logo-marquee-label { text-align: center; font-size: 12px; font-weight: 700; color: #9ca3af; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 28px; }
+.logo-marquee-wrap { overflow: hidden; position: relative; }
+.logo-marquee-wrap::before, .logo-marquee-wrap::after {
+  content: ""; position: absolute; top: 0; width: 120px; height: 100%; z-index: 2; pointer-events: none;
+}
+.logo-marquee-wrap::before { left: 0; background: linear-gradient(90deg, #fff 0%, transparent 100%); }
+.logo-marquee-wrap::after  { right: 0; background: linear-gradient(-90deg, #fff 0%, transparent 100%); }
+.logo-marquee { display: flex; align-items: center; gap: 56px; width: max-content;
+  animation: marqueeScroll 38s linear infinite; }
+.logo-marquee:hover { animation-play-state: paused; }
+@keyframes marqueeScroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+.logo-item { flex-shrink: 0; height: 48px; display: flex; align-items: center; justify-content: center; }
+.logo-item img { height: 32px; max-width: 120px; object-fit: contain;
+  filter: grayscale(1) opacity(0.5); transition: all 0.35s ease; }
+.logo-item img:hover { filter: grayscale(0) opacity(1); transform: scale(1.1); }
+/* Text fallback tiles for logos not yet uploaded */
+.logo-tile { height: 32px; padding: 0 16px; background: var(--bg-light);
+  border: 1px solid var(--border); border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700; color: var(--text-muted);
+  white-space: nowrap; letter-spacing: 0.5px;
+  filter: opacity(0.6); transition: all 0.3s; }
+.logo-tile:hover { filter: opacity(1); border-color: var(--primary); color: var(--primary); }
+
+/* ── Industry Tabs Section ──────────────────────────── */
+.ind-section { background: var(--bg-light); padding: 96px 0; }
+.ind-tabs-nav { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 40px; }
+.ind-tab-btn {
+  padding: 10px 22px; border-radius: 99px; font-size: 14px; font-weight: 600;
+  border: 1.5px solid var(--border); color: var(--text-muted); background: #fff;
+  cursor: pointer; transition: all 0.2s; white-space: nowrap;
+}
+.ind-tab-btn:hover { border-color: var(--primary); color: var(--primary); }
+.ind-tab-btn.active {
+  background: var(--primary); border-color: var(--primary); color: #fff;
+  box-shadow: 0 4px 16px rgba(27,169,222,0.3);
+}
+.ind-tab-panel { display: none; }
+.ind-tab-panel.active { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.ind-tab-img {
+  border-radius: 20px; overflow: hidden; height: 340px;
+  background: linear-gradient(135deg, var(--navy) 0%, #0d3458 100%);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 80px; position: relative;
+}
+.ind-tab-img img { width: 100%; height: 100%; object-fit: cover; }
+.ind-tab-img-placeholder { font-size: 72px; }
+.ind-tab-tag { display: inline-flex; align-items: center; gap: 6px;
+  background: rgba(27,169,222,0.1); color: var(--primary);
+  border: 1px solid rgba(27,169,222,0.2);
+  padding: 5px 14px; border-radius: 99px; font-size: 12px; font-weight: 700;
+  margin-bottom: 16px; }
+.ind-tab-title { font-size: clamp(22px,3vw,32px); font-weight: 900; color: var(--navy); margin-bottom: 14px; line-height: 1.2; }
+.ind-tab-desc { font-size: 15px; color: var(--text-muted); line-height: 1.75; margin-bottom: 24px; }
+.ind-tab-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-bottom: 28px; }
+.ind-tab-stat { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 16px 12px; text-align: center; }
+.ind-tab-stat .val { font-size: 22px; font-weight: 900; color: var(--primary); font-family: "Space Grotesk",sans-serif; }
+.ind-tab-stat .lbl { font-size: 11px; color: var(--text-muted); margin-top: 4px; }
+.ind-tab-skus { display: flex; flex-wrap: wrap; gap: 8px; }
+.ind-tab-sku { background: rgba(27,169,222,0.08); color: var(--primary); border: 1px solid rgba(27,169,222,0.2); padding: 5px 13px; border-radius: 99px; font-size: 12px; font-weight: 600; }
+
+/* ── Product Horizontal Scroll ──────────────────────── */
+.prod-scroll-section { background: #fff; padding: 96px 0; overflow: hidden; }
+.prod-scroll-wrap { position: relative; }
+.prod-scroll {
+  display: flex; gap: 24px; overflow-x: auto;
+  padding: 8px 0 24px; scroll-snap-type: x mandatory;
+  scrollbar-width: thin; scrollbar-color: var(--border) transparent;
+  -webkit-overflow-scrolling: touch;
+}
+.prod-scroll::-webkit-scrollbar { height: 4px; }
+.prod-scroll::-webkit-scrollbar-track { background: transparent; }
+.prod-scroll::-webkit-scrollbar-thumb { background: var(--border); border-radius: 99px; }
+.prod-scroll-card {
+  min-width: 240px; max-width: 240px; scroll-snap-align: start;
+  background: #fff; border-radius: 18px; border: 1px solid var(--border);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05); overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.34,1.2,0.64,1); flex-shrink: 0;
+}
+.prod-scroll-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); border-color: rgba(27,169,222,0.25); }
+.prod-scroll-img {
+  width: 100%; height: 160px; object-fit: cover; display: block;
+  background: linear-gradient(135deg, #f0f7fc 0%, #e0f0f8 100%);
+}
+.prod-scroll-img-placeholder {
+  width: 100%; height: 160px;
+  background: linear-gradient(135deg, rgba(27,169,222,0.08) 0%, rgba(27,169,222,0.03) 100%);
+  display: flex; align-items: center; justify-content: center; font-size: 52px;
+}
+.prod-scroll-body { padding: 18px; }
+.prod-scroll-badge { display: inline-flex; align-items: center; gap: 4px; background: rgba(27,169,222,0.1); color: var(--primary); font-size: 10px; font-weight: 700; padding: 3px 10px; border-radius: 99px; margin-bottom: 8px; }
+.prod-scroll-name { font-size: 14px; font-weight: 800; color: var(--navy); margin-bottom: 6px; line-height: 1.3; }
+.prod-scroll-ind { font-size: 11px; color: #9ca3af; }
+.prod-scroll-arrows { display: flex; gap: 8px; margin-top: 24px; }
+.prod-scroll-arrow { width: 40px; height: 40px; border-radius: 10px; border: 1.5px solid var(--border); background: #fff; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.2s; }
+.prod-scroll-arrow:hover { border-color: var(--primary); color: var(--primary); background: rgba(27,169,222,0.06); }
+
+/* ── SVG Icon Cards ─────────────────────────────────── */
+.icon-card-svg { width: 48px; height: 48px; margin-bottom: 18px; }
+
+/* ── Tool Strip (CSS-based, no inline JS) ───────────── */
+.tool-strip { background: #fff; border-bottom: 1px solid #f0f0f0; }
+.tool-strip-inner { display: flex; align-items: stretch; flex-wrap: wrap; }
+.tool-strip-item {
+  flex: 1; min-width: 240px; display: flex; align-items: center; gap: 16px;
+  padding: 18px 24px; text-decoration: none; transition: background 0.2s;
+}
+.tool-strip-item:first-child { border-right: 1px solid #f0f0f0; }
+.tool-strip-item:hover { background: #fafafa; }
+.tool-strip-item.orange:hover { background: #fff8f5; }
+.tool-strip-item.blue:hover { background: #f0f9ff; }
+.tool-strip-icon { width: 42px; height: 42px; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.tool-strip-icon.orange { background: linear-gradient(135deg,#F97316,#fb923c); }
+.tool-strip-icon.blue   { background: linear-gradient(135deg,#1BA9DE,#0090c0); }
+.tool-strip-title { font-size: 13px; font-weight: 800; color: #111827; font-family:"Space Grotesk",sans-serif; letter-spacing: 0.5px; }
+.tool-strip-badge { display: inline-block; font-size: 10px; padding: 2px 7px; border-radius: 99px; font-weight: 700; margin-left: 6px; }
+.tool-strip-badge.orange { background: #F97316; color: #fff; }
+.tool-strip-badge.blue   { background: #1BA9DE; color: #fff; }
+.tool-strip-sub { font-size: 12px; color: #9ca3af; margin-top: 2px; }
+.tool-strip-arrow { margin-left: auto; font-size: 18px; transition: transform 0.2s; }
+.tool-strip-item.orange .tool-strip-arrow { color: #F97316; }
+.tool-strip-item.blue   .tool-strip-arrow { color: #1BA9DE; }
+.tool-strip-item:hover .tool-strip-arrow { transform: translateX(3px); }
+
+/* ── Section dividers ───────────────────────────────── */
+.section-wave { display: block; width: 100%; line-height: 0; }
+
+/* ── Responsive: Industry tabs ──────────────────────── */
+.ind-tabs-body { display: grid; }
+@media (min-width: 768px) { .ind-tab-panel.active { display: grid; } }

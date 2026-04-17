@@ -78,6 +78,30 @@ document.addEventListener('DOMContentLoaded', function() {
   }, { threshold: 0.5 });
   document.querySelectorAll('.counter').forEach(function(el) { counterObs.observe(el); });
 
+
+  // Industry Tabs (index.html)
+  var indBtns = document.querySelectorAll('.ind-tab-btn');
+  var indPanels = document.querySelectorAll('.ind-tab-panel');
+  if (indBtns.length) {
+    indBtns.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        indBtns.forEach(function(b) { b.classList.remove('active'); });
+        indPanels.forEach(function(p) { p.classList.remove('active'); });
+        btn.classList.add('active');
+        var panel = document.getElementById('ind-' + btn.dataset.ind);
+        if (panel) panel.classList.add('active');
+      });
+    });
+  }
+
+  // Product horizontal scroll arrows
+  var ps = document.getElementById('prod-scroll');
+  if (ps) {
+    var nextBtn = document.getElementById('prod-next');
+    var prevBtn = document.getElementById('prod-prev');
+    if (nextBtn) nextBtn.addEventListener('click', function() { ps.scrollBy({left: 280, behavior:'smooth'}); });
+    if (prevBtn) prevBtn.addEventListener('click', function() { ps.scrollBy({left: -280, behavior:'smooth'}); });
+  }
   // Smooth scroll for anchor links
   document.querySelectorAll('a[href^="#"]').forEach(function(a) {
     a.addEventListener('click', function(e) {
